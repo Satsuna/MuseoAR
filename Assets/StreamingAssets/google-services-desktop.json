@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "768780124302",
+    "project_id": "museoar-ace55",
+    "storage_bucket": "museoar-ace55.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768780124302:android:515c2fbb08b9e56e2b49df",
+        "android_client_info": {
+          "package_name": "com.museoar.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjmKNqr30VES4K3h8Gi08C1QkKF5ajAjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
