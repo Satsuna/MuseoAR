@@ -33,15 +33,15 @@ public class TrackedImageUIUpdater : MonoBehaviour
 
     private void OnEnable()
     {
-        trackedImageManager.trackedImagesChanged += OnTrackedImagesChanged;
+        trackedImageManager.trackablesChanged.AddListener(OnTrackedImagesChanged);
     }
 
     private void OnDisable()
     {
-        trackedImageManager.trackedImagesChanged -= OnTrackedImagesChanged;
+        trackedImageManager.trackablesChanged.RemoveListener(OnTrackedImagesChanged);
     }
 
-    private void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
+    private void OnTrackedImagesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
     {
         foreach (var trackedImage in eventArgs.added)
         {
