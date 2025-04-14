@@ -37,7 +37,7 @@ public class FirebaseAuthManager : MonoBehaviour
 
         if (password != confirmPassword) {
             loadingScreen.SetActive(false);
-            logTxt.text = "Password does not match";
+            showLogMsg("Password does not match!");
             return;
         }
 
@@ -277,8 +277,46 @@ public class FirebaseAuthManager : MonoBehaviour
         string email = LoginEmail.text;
         string password = loginPassword.text;
 
-         Credential credential =
-         EmailAuthProvider.GetCredential(email, password);
+        PlayerPrefs.SetString("email", email);
+        PlayerPrefs.SetString("pass", password);
+
+         Credential credential = EmailAuthProvider.GetCredential(email, password);
+         auth.SignInAndRetrieveDataWithCredentialAsync(credential).ContinueWithOnMainThread(task => {
+            if (task.IsCanceled)
+            {
+                Debug.LogError("SignInAndRetrieveDataWithCredentialAsync was canceled.");
+                return;
+            }
+            if (task.IsFaulted)
+            {
+                Debug.LogError("SignInAndRetrieveDataWithCredentialAsync encountered an error: " + task.Exception);
+                loadingScreen.SetActive(false);
+                logTxt.text = "Error";
+                return;
+            }
+            loadingScreen.SetActive(false);
+            AuthResult result = task.Result;
+            Debug.LogFormat("User signed in successfully: {0} ({1})", result.User.DisplayName, result.User.UserId);
+
+            SceneManager.LoadScene("Camera");
+
+             if (!result.User.IsEmailVerified)
+             {
+                showLogMsg("Please verify email!!");
+             }
+         });       
+    }
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("email") & PlayerPrefs.HasKey("pass")) {
+            loadingScreen.SetActive(true);
+
+            FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+            string email = PlayerPrefs.GetString("email");
+            string password = PlayerPrefs.GetString("pass");
+
+            Credential credential = EmailAuthProvider.GetCredential(email, password);
          auth.SignInAndRetrieveDataWithCredentialAsync(credential).ContinueWithOnMainThread(task => {
             if (task.IsCanceled)
             {
@@ -303,11 +341,9 @@ public class FirebaseAuthManager : MonoBehaviour
                 showLogMsg("Please verify email!!");
              }
          });
+        }
+    } 
 
-        
-           
-      
-    }
     #endregion
 
     #region extra
