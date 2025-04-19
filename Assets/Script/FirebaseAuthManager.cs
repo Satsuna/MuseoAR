@@ -346,6 +346,14 @@ public class FirebaseAuthManager : MonoBehaviour
 
     #endregion
 
+    public void SignOut() {
+        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+        auth.SignOut();
+        PlayerPrefs.DeleteKey("email");
+        PlayerPrefs.DeleteKey("pass");
+        SceneManager.LoadScene("Sign In");
+    }
+
     #region extra
     void showLogMsg(string msg)
     {
