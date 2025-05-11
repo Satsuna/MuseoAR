@@ -1,3 +1,10 @@
+//Playerprefs
+/*
+    LoggedIn
+    email
+    pass
+*/
+
 using System.Collections;
 using UnityEngine;
 using TMPro;
@@ -5,6 +12,8 @@ using Firebase.Extensions;
 using Firebase.Auth;
 using Firebase;
 using UnityEngine.SceneManagement;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class FirebaseAuthManager : MonoBehaviour
 {
@@ -270,6 +279,7 @@ public class FirebaseAuthManager : MonoBehaviour
     #endregion
 
     #region Login
+    
     public void Login() {
         loadingScreen.SetActive(true);
 
@@ -277,8 +287,7 @@ public class FirebaseAuthManager : MonoBehaviour
         string email = LoginEmail.text;
         string password = loginPassword.text;
 
-        PlayerPrefs.SetString("email", email);
-        PlayerPrefs.SetString("pass", password);
+        SaveData(email, password);
 
          Credential credential = EmailAuthProvider.GetCredential(email, password);
          auth.SignInAndRetrieveDataWithCredentialAsync(credential).ContinueWithOnMainThread(task => {
@@ -298,7 +307,9 @@ public class FirebaseAuthManager : MonoBehaviour
             AuthResult result = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})", result.User.DisplayName, result.User.UserId);
 
-            SceneManager.LoadScene("Camera");
+            PlayerPrefs.SetInt("LoggedIn", 1);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("User Data");
 
              if (!result.User.IsEmailVerified)
              {
@@ -306,51 +317,21 @@ public class FirebaseAuthManager : MonoBehaviour
              }
          });       
     }
+    #endregion
 
+    #region Start
     void Start()
     {
-        if (PlayerPrefs.HasKey("email") & PlayerPrefs.HasKey("pass")) {
-            loadingScreen.SetActive(true);
-
-            FirebaseAuth auth = FirebaseAuth.DefaultInstance;
-            string email = PlayerPrefs.GetString("email");
-            string password = PlayerPrefs.GetString("pass");
-
-            Credential credential = EmailAuthProvider.GetCredential(email, password);
-         auth.SignInAndRetrieveDataWithCredentialAsync(credential).ContinueWithOnMainThread(task => {
-            if (task.IsCanceled)
-            {
-                Debug.LogError("SignInAndRetrieveDataWithCredentialAsync was canceled.");
-                return;
-            }
-            if (task.IsFaulted)
-            {
-                Debug.LogError("SignInAndRetrieveDataWithCredentialAsync encountered an error: " + task.Exception);
-                loadingScreen.SetActive(false);
-                logTxt.text = "Error";
-                return;
-            }
-            loadingScreen.SetActive(false);
-            AuthResult result = task.Result;
-            Debug.LogFormat("User signed in successfully: {0} ({1})", result.User.DisplayName, result.User.UserId);
-
-            SceneManager.LoadScene("Camera");
-
-             if (!result.User.IsEmailVerified)
-             {
-                showLogMsg("Please verify email!!");
-             }
-         });
+        if (PlayerPrefs.HasKey("LoggedIn")) {
+            AutoLogin();
         }
-    } 
-
+    }
     #endregion
 
     public void SignOut() {
         FirebaseAuth auth = FirebaseAuth.DefaultInstance;
         auth.SignOut();
-        PlayerPrefs.DeleteKey("email");
-        PlayerPrefs.DeleteKey("pass");
+        PlayerPrefs.DeleteKey("LoggedIn");
         SceneManager.LoadScene("Sign In");
     }
 
@@ -362,4 +343,24 @@ public class FirebaseAuthManager : MonoBehaviour
     }
     #endregion
 
+    
+    void SaveData(string email, string password) {
+        BinaryFormatter bf = new BinaryFormatter();
+        if (!File.Exists(Application.persistentDataPath + "/SavedData.dat")) {
+            FileStream file = new FileStream(Application.persistentDataPath + "/SavedData.dat", FileMode.OpenOrCreate);
+            UserData userData = new UserData();
+            userData.UserEmail = email;
+            userData.Password = password;
+            bf.Serialize(file, userData);
+            file.Close();
+        }
+    }
+
+    void AutoLogin() {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/SavedData.dat", FileMode.Open);
+        UserData userData = (UserData) bf.Deserialize(file);
+        file.Close();
+        Login();
+    }
 }
