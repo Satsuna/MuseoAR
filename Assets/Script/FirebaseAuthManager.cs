@@ -30,7 +30,6 @@ public class FirebaseAuthManager : MonoBehaviour
     [Header("Extra")]
     public GameObject loadingScreen;
     public TextMeshProUGUI logTxt;
-    public GameObject SuccessUi;
     #endregion
 
     #region signup 
@@ -322,9 +321,9 @@ public class FirebaseAuthManager : MonoBehaviour
     #region Start
     void Start()
     {
-        if (PlayerPrefs.HasKey("LoggedIn")) {
+        /*if (PlayerPrefs.HasKey("LoggedIn")) {
             AutoLogin();
-        }
+        }*/
     }
     #endregion
 
@@ -356,11 +355,11 @@ public class FirebaseAuthManager : MonoBehaviour
         }
     }
 
-    void AutoLogin() {
+    /*void AutoLogin() {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/SavedData.dat", FileMode.Open);
         UserData userData = (UserData) bf.Deserialize(file);
         file.Close();
         Login();
-    }
+    }*/
 }
