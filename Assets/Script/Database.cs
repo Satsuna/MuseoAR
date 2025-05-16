@@ -11,9 +11,11 @@ public class Database : MonoBehaviour
     public TextMeshProUGUI Gender;
     public TMP_InputField Nationality;
     public GameObject loadingScreen;
+    public GameObject parent;
 
 
     void Awake() {
+        parent.SetActive(false);
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task => {
             var dependencyStatus = task.Result;
             if (dependencyStatus == DependencyStatus.Available) {
@@ -71,11 +73,13 @@ public class Database : MonoBehaviour
 
             DataSnapshot snapshot = task.Result;
             if (snapshot.Exists) {
-                Debug.Log("It exists");
                 SceneManager.LoadScene("Camera");
             }
+            else {
+                loadingScreen.SetActive(true);
+            }
             
-            loadingScreen.SetActive(false);
+            
         });
         
     }

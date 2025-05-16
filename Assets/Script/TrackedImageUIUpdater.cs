@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
+using Firebase.Auth;
+using Firebase;
+using UnityEngine.SceneManagement;
 
 public class TrackedImageUIUpdater : MonoBehaviour
 {
@@ -72,5 +74,11 @@ public class TrackedImageUIUpdater : MonoBehaviour
     private void ResetUIText()
     {
         uiText.text = "Scan an image...";
+    }
+
+    public void Logout() {
+        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+        auth.SignOut();
+        SceneManager.LoadScene("Startup");
     }
 }

@@ -31,6 +31,4 @@ public class startupManager : MonoBehaviour
     public void changeScene() {
         SceneManager.LoadScene("Sign In");
     }
-
-
 }
