@@ -6,14 +6,24 @@ public class startupManager : MonoBehaviour
 {
     public Toggle toggle;
     public Button button;
+    public GameObject getStarted;
+    public GameObject selectLanguage;
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("HasLaunchedBefore")) {
+        if (PlayerPrefs.HasKey("ChangeLanguage"))
+        {
+            getStarted.SetActive(false);
+            selectLanguage.SetActive(true);
+        }
+
+        if (PlayerPrefs.HasKey("HasLaunchedBefore"))
+        {
             SceneManager.LoadScene("Sign In");
         }
 
-        else {
+        else
+        {
             PlayerPrefs.SetInt("HasLaunchedBefore", 1);
             PlayerPrefs.Save();
         }
@@ -29,6 +39,14 @@ public class startupManager : MonoBehaviour
     }
 
     public void changeScene() {
-        SceneManager.LoadScene("Sign In");
+        if (PlayerPrefs.HasKey("ChangeLanguage"))
+        {
+            SceneManager.LoadScene("Camera");
+            PlayerPrefs.DeleteKey("ChangeLanguage");
+        }
+        else
+        {
+            SceneManager.LoadScene("Sign In");
+        }
     }
 }
