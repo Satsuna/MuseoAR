@@ -13,7 +13,6 @@ public class Database : MonoBehaviour
     public GameObject loadingScreen;
     public GameObject parent;
 
-
     void Awake() {
         parent.SetActive(false);
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task => {
@@ -72,15 +71,15 @@ public class Database : MonoBehaviour
             }
 
             DataSnapshot snapshot = task.Result;
-            if (snapshot.Exists) {
+            if (snapshot.Exists)
+            {
                 SceneManager.LoadScene("Camera");
             }
-            else {
-                loadingScreen.SetActive(true);
-            }
-            
-            
+            else
+            {
+                loadingScreen.SetActive(false);
+                parent.SetActive(true);
+            }            
         });
-        
     }
 }

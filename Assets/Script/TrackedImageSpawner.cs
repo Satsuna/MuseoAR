@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -11,8 +13,11 @@ public class TrackedImageSpawner : MonoBehaviour
 
     private Dictionary<string, GameObject> prefabDictionary = new Dictionary<string, GameObject>();
     private Dictionary<string, GameObject> spawnedObjects = new Dictionary<string, GameObject>();
+    public TextMeshProUGUI debug;
+    public GameObject indicator;
+    public Button m_button;
 
-    [System.Serializable]
+    [Serializable]
     public class PrefabMapping
     {
         public string imageName; // Reference Image Library
@@ -30,6 +35,9 @@ public class TrackedImageSpawner : MonoBehaviour
             }
         }
     }
+    private void Start() {
+        m_button.onClick.AddListener(RemoveIndicator);
+    }
 
     private void OnEnable()
     {
@@ -46,6 +54,7 @@ public class TrackedImageSpawner : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             SpawnPrefab(trackedImage);
+            indicator.SetActive(true);
         }
 
         foreach (var trackedImage in eventArgs.updated)
@@ -65,6 +74,8 @@ public class TrackedImageSpawner : MonoBehaviour
                 GameObject spawnedObject = Instantiate(prefab, trackedImage.transform.position, trackedImage.transform.rotation);
                 spawnedObjects[imageName] = spawnedObject;
                 Debug.Log("Spawned a 3d Object! " + spawnedObject);
+                debug.text = "Spawned a 3d object " + spawnedObject + " at " + trackedImage.transform.position;
+
             }
         }
     }
@@ -72,21 +83,18 @@ public class TrackedImageSpawner : MonoBehaviour
     private void UpdatePrefab(ARTrackedImage trackedImage)
     {
         if (spawnedObjects.TryGetValue(trackedImage.referenceImage.name, out GameObject obj))
-        {        
-            if (trackedImage.trackingState == TrackingState.Tracking) {
+        {
+            if (trackedImage.trackingState == TrackingState.Tracking)
+            {
                 obj.SetActive(true);
-                obj.transform.position = trackedImage.transform.position;
-                obj.transform.rotation = trackedImage.transform.rotation;
+                obj.transform.SetPositionAndRotation(trackedImage.transform.position, trackedImage.transform.rotation);
             }
 
-            else {
-                obj.SetActive(false);
+            else
+            {
+                //obj.SetActive(false);
             }
-
-
         }
-
-
     }
 
     private void RemovePrefab(ARTrackedImage trackedImage)
@@ -96,5 +104,10 @@ public class TrackedImageSpawner : MonoBehaviour
             Destroy(obj);
             spawnedObjects.Remove(trackedImage.referenceImage.name);
         }
+    }
+
+    public void RemoveIndicator()
+    {
+        indicator.SetActive(false);
     }
 }

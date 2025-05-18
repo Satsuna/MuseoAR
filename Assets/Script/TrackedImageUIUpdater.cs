@@ -76,9 +76,23 @@ public class TrackedImageUIUpdater : MonoBehaviour
         uiText.text = "Scan an image...";
     }
 
-    public void Logout() {
+    public void Logout()
+    {
         FirebaseAuth auth = FirebaseAuth.DefaultInstance;
         auth.SignOut();
+        SceneManager.LoadScene("Startup");
+    }
+    
+    public void SignOut()
+    {
+        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+        auth.SignOut();
+        PlayerPrefs.DeleteKey("LoggedIn");
+        SceneManager.LoadScene("Sign In");
+    }
+    public void ChangeLanguage()
+    {
+        PlayerPrefs.SetInt("ChangeLanguage", 1);
         SceneManager.LoadScene("Startup");
     }
 }
