@@ -3,14 +3,16 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.XR.ARFoundation;
 using Firebase.Auth;
-using Firebase;
 using UnityEngine.SceneManagement;
+using Firebase.Database;
 
 public class TrackedImageUIUpdater : MonoBehaviour
 {
     [SerializeField] private ARTrackedImageManager trackedImageManager;
     [SerializeField] private List<ImageTextMapping> imageTextMappings;
     [SerializeField] private TextMeshProUGUI uiText;
+
+    public TMP_InputField feedbackText;
 
     private Dictionary<string, string> textDictionary = new Dictionary<string, string>();
 
@@ -76,13 +78,6 @@ public class TrackedImageUIUpdater : MonoBehaviour
         uiText.text = "Scan an image...";
     }
 
-    public void Logout()
-    {
-        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
-        auth.SignOut();
-        SceneManager.LoadScene("Startup");
-    }
-    
     public void SignOut()
     {
         FirebaseAuth auth = FirebaseAuth.DefaultInstance;
@@ -94,5 +89,37 @@ public class TrackedImageUIUpdater : MonoBehaviour
     {
         PlayerPrefs.SetInt("ChangeLanguage", 1);
         SceneManager.LoadScene("Startup");
+    }
+
+    private void SubmitFeedback(string userId, string feedback)
+    {
+        DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        string Content = feedback;
+
+        Feedback feedback1 = new Feedback(Content);
+        string json = JsonUtility.ToJson(feedback1);
+
+        reference.Child("users").Child(userId).Child("data").Child("feedback").SetRawJsonValueAsync(json);
+    }
+
+    public void Submit()
+    {
+        FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+        SubmitFeedback(user.UserId, feedbackText.text);
+    }
+}
+
+[System.Serializable]
+public class Feedback
+{
+    public string feedback;
+
+    public Feedback() {
+
+    }
+
+    public Feedback(string content) {
+        feedback = content;
     }
 }
