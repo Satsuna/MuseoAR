@@ -61,6 +61,7 @@ public class Database : MonoBehaviour
 
         void CheckProfile() {
         FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+        string uid = user.UserId;
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(user.UserId).Child("data");
         
         reference.GetValueAsync().ContinueWithOnMainThread(task => {
@@ -71,7 +72,7 @@ public class Database : MonoBehaviour
             }
 
             DataSnapshot snapshot = task.Result;
-            if (snapshot.Exists)
+            if (snapshot.HasChild("Gender"))
             {
                 SceneManager.LoadScene("Camera");
             }
