@@ -12,8 +12,6 @@ using Firebase.Extensions;
 using Firebase.Auth;
 using Firebase;
 using UnityEngine.SceneManagement;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
 
 public class FirebaseAuthManager : MonoBehaviour
 {
@@ -30,6 +28,7 @@ public class FirebaseAuthManager : MonoBehaviour
     [Header("Extra")]
     public GameObject loadingScreen;
     public TextMeshProUGUI logTxt;
+    public GameObject parent;
     #endregion
 
     #region signup 
@@ -43,13 +42,15 @@ public class FirebaseAuthManager : MonoBehaviour
         string password = SignupPassword.text;
         string confirmPassword = SignupPasswordConfirm.text;
 
-        if (password != confirmPassword) {
+        if (password != confirmPassword)
+        {
             loadingScreen.SetActive(false);
             showLogMsg("Password does not match!");
             return;
         }
 
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task => {
+        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+        {
             if (task.IsCanceled)
             {
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync was canceled.");
@@ -77,11 +78,12 @@ public class FirebaseAuthManager : MonoBehaviour
             {
                 showLogMsg("Sign up Successful");
             }
-            else {
+            else
+            {
                 showLogMsg("Please verify your email!!");
                 SendEmailVerification();
             }
-          
+
         });
     }
 
@@ -286,8 +288,6 @@ public class FirebaseAuthManager : MonoBehaviour
         string email = LoginEmail.text;
         string password = loginPassword.text;
 
-        SaveData(email, password);
-
          Credential credential = EmailAuthProvider.GetCredential(email, password);
          auth.SignInAndRetrieveDataWithCredentialAsync(credential).ContinueWithOnMainThread(task => {
             if (task.IsCanceled)
@@ -321,9 +321,7 @@ public class FirebaseAuthManager : MonoBehaviour
     #region Start
     void Start()
     {
-        /*if (PlayerPrefs.HasKey("LoggedIn")) {
-            AutoLogin();
-        }*/
+        AutoLogin();
     }
     #endregion
 
@@ -342,24 +340,17 @@ public class FirebaseAuthManager : MonoBehaviour
     }
     #endregion
 
-    
-    void SaveData(string email, string password) {
-        BinaryFormatter bf = new BinaryFormatter();
-        if (!File.Exists(Application.persistentDataPath + "/SavedData.dat")) {
-            FileStream file = new FileStream(Application.persistentDataPath + "/SavedData.dat", FileMode.OpenOrCreate);
-            UserData userData = new UserData();
-            userData.UserEmail = email;
-            userData.Password = password;
-            bf.Serialize(file, userData);
-            file.Close();
+    void AutoLogin()
+    {
+        FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+
+        if (user != null)
+        {
+            SceneManager.LoadScene("Camera");
+        }
+        else
+        {
+            parent.SetActive(true);
         }
     }
-
-    /*void AutoLogin() {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + "/SavedData.dat", FileMode.Open);
-        UserData userData = (UserData) bf.Deserialize(file);
-        file.Close();
-        Login();
-    }*/
 }

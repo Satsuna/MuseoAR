@@ -5,6 +5,7 @@ using UnityEngine.XR.ARFoundation;
 using Firebase.Auth;
 using UnityEngine.SceneManagement;
 using Firebase.Database;
+using UnityEngine.UI;
 
 public class TrackedImageUIUpdater : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class TrackedImageUIUpdater : MonoBehaviour
     [SerializeField] private TextMeshProUGUI uiText;
 
     public TMP_InputField feedbackText;
+    public GameObject indicator;
+    public Button m_button;
 
     private Dictionary<string, string> textDictionary = new Dictionary<string, string>();
 
@@ -21,6 +24,15 @@ public class TrackedImageUIUpdater : MonoBehaviour
     {
         public string imageName;
         [TextArea] public string displayText;
+    }
+
+    private void Start() {
+        m_button.onClick.AddListener(RemoveIndicator);
+    }
+
+    public void RemoveIndicator()
+    {
+        indicator.SetActive(false);
     }
 
     private void Awake()
@@ -50,6 +62,7 @@ public class TrackedImageUIUpdater : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             UpdateUIText(trackedImage);
+            indicator.SetActive(true);
         }
 
         foreach (var trackedImage in eventArgs.updated)
