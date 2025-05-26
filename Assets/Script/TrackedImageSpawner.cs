@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -10,12 +9,11 @@ public class TrackedImageSpawner : MonoBehaviour
 {
     [SerializeField] private ARTrackedImageManager trackedImageManager;
     [SerializeField] private List<PrefabMapping> prefabMappings; //kesa naman sa ifelse HAHAHA
+    [SerializeField] private ARSession arSession;
 
     private Dictionary<string, GameObject> prefabDictionary = new Dictionary<string, GameObject>();
     private Dictionary<string, GameObject> spawnedObjects = new Dictionary<string, GameObject>();
     public TextMeshProUGUI debug;
-    public GameObject indicator;
-    public Button m_button;
 
     [Serializable]
     public class PrefabMapping
@@ -26,6 +24,8 @@ public class TrackedImageSpawner : MonoBehaviour
 
     private void Awake()
     {
+        arSession.Reset();
+        
         // Convert list to dictionary for quick lookup
         foreach (var mapping in prefabMappings)
         {
@@ -36,7 +36,6 @@ public class TrackedImageSpawner : MonoBehaviour
         }
     }
     private void Start() {
-        m_button.onClick.AddListener(RemoveIndicator);
     }
 
     private void OnEnable()
@@ -54,13 +53,22 @@ public class TrackedImageSpawner : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             SpawnPrefab(trackedImage);
-            indicator.SetActive(true);
         }
 
         foreach (var trackedImage in eventArgs.updated)
         {
             UpdatePrefab(trackedImage);
         }
+
+        foreach (var trackedImage in eventArgs.removed)
+        {
+            RemovePrefab(trackedImage.Value);
+        }
+    }
+
+    public void Rescan()
+    {
+        arSession.Reset();
     }
 
     private void SpawnPrefab(ARTrackedImage trackedImage)
@@ -89,11 +97,6 @@ public class TrackedImageSpawner : MonoBehaviour
                 obj.SetActive(true);
                 obj.transform.SetPositionAndRotation(trackedImage.transform.position, trackedImage.transform.rotation);
             }
-
-            else
-            {
-                //obj.SetActive(false);
-            }
         }
     }
 
@@ -101,13 +104,9 @@ public class TrackedImageSpawner : MonoBehaviour
     {
         if (spawnedObjects.TryGetValue(trackedImage.referenceImage.name, out GameObject obj))
         {
+            obj.SetActive(false);
             Destroy(obj);
             spawnedObjects.Remove(trackedImage.referenceImage.name);
         }
-    }
-
-    public void RemoveIndicator()
-    {
-        indicator.SetActive(false);
     }
 }
