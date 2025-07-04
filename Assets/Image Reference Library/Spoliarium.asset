@@ -37,3 +37,13 @@ MonoBehaviour:
     m_SpecifySize: 0
     m_Name: The Assassination of Governor Bustamante
     m_Texture: {fileID: 2800000, guid: 57264e42b0cd6d54ea61b1e1e4e1df03, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5613941925966474224
+      m_GuidHigh: 14622271610746059432
+    m_SerializedTextureGuid:
+      m_GuidLow: 6256743813266852393
+      m_GuidHigh: 977394399955598218
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Bataan
+    m_Texture: {fileID: 2800000, guid: 3864ca296b5956d48a3bcf3e0767900d, type: 3}

@@ -12,6 +12,7 @@ public class TrackedImageUIUpdater : MonoBehaviour
     [SerializeField] private ARTrackedImageManager trackedImageManager;
     [SerializeField] private List<ImageTextMapping> imageTextMappings;
     [SerializeField] private TextMeshProUGUI uiText;
+    public GameObject moreInformationGameObject;
 
     public TMP_InputField feedbackText;
     public GameObject indicator;
@@ -62,7 +63,10 @@ public class TrackedImageUIUpdater : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             UpdateUIText(trackedImage);
-            indicator.SetActive(true);
+            if (moreInformationGameObject.activeSelf == false)
+            {
+                indicator.SetActive(true);
+            }
         }
 
         foreach (var trackedImage in eventArgs.updated)
@@ -113,7 +117,7 @@ public class TrackedImageUIUpdater : MonoBehaviour
         Feedback feedback1 = new Feedback(Content);
         string json = JsonUtility.ToJson(feedback1);
 
-        reference.Child("users").Child(userId).Child("data").Child("feedback").SetRawJsonValueAsync(json);
+        reference.Child("users").Child(userId).Child("data").Child("feedback").Push().SetRawJsonValueAsync(json);
     }
 
     public void Submit()
