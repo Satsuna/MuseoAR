@@ -8,7 +8,7 @@ using UnityEngine.XR.ARSubsystems;
 public class TrackedImageSpawner : MonoBehaviour
 {
     [SerializeField] private ARTrackedImageManager trackedImageManager;
-    [SerializeField] private List<PrefabMapping> prefabMappings; //kesa naman sa ifelse HAHAHA
+    [SerializeField] private List<PrefabMapping> prefabMappings;
     [SerializeField] private ARSession arSession;
 
     private Dictionary<string, GameObject> prefabDictionary = new Dictionary<string, GameObject>();
@@ -35,7 +35,8 @@ public class TrackedImageSpawner : MonoBehaviour
             }
         }
     }
-    private void Start() {
+    private void Start()
+    {
     }
 
     private void OnEnable()
@@ -83,6 +84,8 @@ public class TrackedImageSpawner : MonoBehaviour
                 spawnedObjects[imageName] = spawnedObject;
                 Debug.Log("Spawned a 3d Object! " + spawnedObject);
                 debug.text = "Spawned a 3d object " + spawnedObject + " at " + trackedImage.transform.position;
+
+
 
             }
         }
