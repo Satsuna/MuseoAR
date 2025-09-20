@@ -35,9 +35,6 @@ public class TrackedImageSpawner : MonoBehaviour
             }
         }
     }
-    private void Start()
-    {
-    }
 
     private void OnEnable()
     {
@@ -82,11 +79,13 @@ public class TrackedImageSpawner : MonoBehaviour
             {
                 GameObject spawnedObject = Instantiate(prefab, trackedImage.transform.position, trackedImage.transform.rotation);
                 spawnedObjects[imageName] = spawnedObject;
+
+                Vector2 size = trackedImage.size; // in meters (width, height of the painting)
+                float uniformScale = Mathf.Min(size.x, size.y); // pick smaller dimension to preserve aspect ratio
+                spawnedObject.transform.localScale = Vector3.one * uniformScale;
+
                 Debug.Log("Spawned a 3d Object! " + spawnedObject);
                 debug.text = "Spawned a 3d object " + spawnedObject + " at " + trackedImage.transform.position;
-
-
-
             }
         }
     }
@@ -99,6 +98,10 @@ public class TrackedImageSpawner : MonoBehaviour
             {
                 obj.SetActive(true);
                 obj.transform.SetPositionAndRotation(trackedImage.transform.position, trackedImage.transform.rotation);
+
+                Vector2 size = trackedImage.size;
+                float uniformScale = Mathf.Min(size.x, size.y);
+                obj.transform.localScale = Vector3.one * uniformScale;
             }
         }
     }
