@@ -34,6 +34,9 @@ public class Quiz : MonoBehaviour
     public Button choiceBButton;
     public GameObject popUpIcon;
     public GameObject quizPanel;
+    public GameObject description;
+    public GameObject text, open;
+    public Button descButton;
 
     private bool wasQuizPanelActiveLastFrame = false;
 
@@ -49,6 +52,18 @@ public class Quiz : MonoBehaviour
 
     private void Update()
     {
+        if (quizPanel.activeSelf == true)
+        {
+            description.SetActive(false);
+            text.SetActive(true);
+            open.SetActive(true);
+            descButton.interactable = false;
+        }
+        else
+        {
+            descButton.interactable = true;
+        }
+
         if (quizPanel.activeSelf && !wasQuizPanelActiveLastFrame)
         {
             ShowRandomQuestion();

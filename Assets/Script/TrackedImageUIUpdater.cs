@@ -102,11 +102,6 @@ public class TrackedImageUIUpdater : MonoBehaviour
         PlayerPrefs.DeleteKey("LoggedIn");
         SceneManager.LoadScene("Sign In");
     }
-    public void ChangeLanguage()
-    {
-        PlayerPrefs.SetInt("ChangeLanguage", 1);
-        SceneManager.LoadScene("Startup");
-    }
 
     private void SubmitFeedback(string userId, string feedback)
     {
