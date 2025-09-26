@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9333ca4d321ba224eb80072b7c014f8e
+guid: d4ac0089210337942ab1adeabbbf216c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: L01
-    second: {fileID: 2100000, guid: ffc88dacf6b710a4fadc286d4ec1d119, type: 2}
+      name: L01_una
+    second: {fileID: 2100000, guid: 2a98ac0cd9adf3044a864e4d2ff9b635, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: L02
-    second: {fileID: 2100000, guid: 223313d93fc11954bb0f0bcd5aa2980d, type: 2}
+      name: L02_una
+    second: {fileID: 2100000, guid: 8c6de11af0acfaf42a25330a2a3f3478, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
