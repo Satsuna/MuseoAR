@@ -10,6 +10,7 @@ public class TrackedImageSpawner : MonoBehaviour
     [SerializeField] private ARTrackedImageManager trackedImageManager;
     [SerializeField] private List<PrefabMapping> prefabMappings;
     [SerializeField] private ARSession arSession;
+    private Dictionary<string, Quiz> activeQuizzes = new Dictionary<string, Quiz>();
 
     private Dictionary<string, GameObject> prefabDictionary = new Dictionary<string, GameObject>();
     private Dictionary<string, GameObject> spawnedObjects = new Dictionary<string, GameObject>();
