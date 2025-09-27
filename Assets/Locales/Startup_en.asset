@@ -22,6 +22,135 @@ MonoBehaviour:
     m_Localized: Get Started
     m_Metadata:
       m_Items: []
+  - m_Id: 213419790266368
+    m_Localized: Select A Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 213973207707648
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216271279452160
+    m_Localized: Log In
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216409536294912
+    m_Localized: Email
+    m_Metadata:
+      m_Items: []
+  - m_Id: 217389329903616
+    m_Localized: I have read the
+    m_Metadata:
+      m_Items: []
+  - m_Id: 217425438666752
+    m_Localized: Terms and Conditions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 218534311981056
+    m_Localized: "<b>1. Acceptance of Terms</b>  \r\nBy downloading, accessing, or
+      using the MuseoAR mobile application (the \u201CApp\u201D), you agree to be
+      bound by these Terms and Conditions.  \r\nIf you do not agree to these terms,
+      please do not use the App.  \r\n\r\n<b>2. Description of the Service</b>  \r\nMuseoAR
+      is an augmented reality (AR) mobile application designed to enhance the museum
+      experience by providing interactive, multilingual information on artifacts
+      and exhibits.  \r\nThe App is for informational and educational purposes only. 
+      \r\n\r\n<b>3. User Obligations</b>  \r\nYou agree to use the App in accordance
+      with all applicable laws and regulations.  \r\nYou shall not misuse the App
+      in any way that may harm its functionality or access rights for other users. 
+      \r\n\r\n<b>4. Intellectual Property Rights</b>  \r\nAll content available within
+      the App, including but not limited to text, graphics, images, software, and
+      multimedia, is the intellectual property of MuseoAR or its licensors.  \r\nYou
+      are not permitted to modify, distribute, reproduce, or use any of the content
+      for commercial purposes without prior written consent.  \r\n\r\n<b>5. Privacy
+      and Data Collection</b>  \r\nThe App may collect data such as language preferences,
+      scan history, and device information for the purpose of enhancing user experience. 
+      \r\nFor detailed information, refer to our Privacy Policy.  \r\nWe are committed
+      to protecting your personal information and ensuring it is used responsibly. 
+      \r\n\r\n<b>6. Limitations of Liability</b>  \r\nMuseoAR and its developers
+      shall not be liable for any direct, indirect, incidental, special, or consequential
+      damages resulting from the use or inability to use the App.  \r\nThe App may
+      include links to third-party websites for additional resources.  \r\nMuseoAR
+      is not responsible for the content or availability of these external sites. 
+      \r\n\r\n<b>7. Updates and Modifications</b>  \r\nWe may update or modify the
+      App and these Terms and Conditions at any time without prior notice.  \r\nBy
+      continuing to use the App after changes are posted, you accept those changes. 
+      \r\nWe recommend checking this page periodically for updates.  \r\n\r\n<b>8.
+      Termination of Access</b>  \r\nMuseoAR reserves the right to terminate or suspend
+      your access to the App without notice for any violation of these Terms.  \r\nUpon
+      termination, all rights granted to you under these Terms will cease immediately. 
+      \r\n\r\n<b>9. Governing Law</b>  \r\nThese Terms and Conditions are governed
+      by and construed in accordance with the laws of Philippines, without regard
+      to its conflict of laws principles.  \r\n\r\n<b>10. Contact Information</b> 
+      \r\nFor any questions or concerns regarding these Terms and Conditions, please
+      contact us at:  \r\nEmail: museoar2024@gmail.com  \r\nAddress: STI Academic
+      Center, Alabang-Zapote Road, corner V.Guinto, Las Pi\xF1as, 1740 Metro Manila. 
+      \r\n\r\n<b>11. Disclaimers</b>  \r\nThe App is provided on an \"as is\" basis
+      without any warranties, express or implied.  \r\nMuseoAR does not guarantee
+      that the App will be error-free or uninterrupted.  \r\n\r\n<b>12. User Acknowledgement</b> 
+      \r\nBy using the App, you acknowledge that you have read, understood, and agree
+      to be bound by these Terms and Conditions.  \r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237192727851008
+    m_Localized: Please Enter the following
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237338760933376
+    m_Localized: Enter your Gender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237779385151488
+    m_Localized: Enter your Nationality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237961136926720
+    m_Localized: Enter text...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242353193971712
+    m_Localized: Male
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242355068825600
+    m_Localized: Female
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245558602723328
+    m_Localized: Log In
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245572020301824
+    m_Localized: Enter your credentials
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245596498259968
+    m_Localized: Email
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245614533767168
+    m_Localized: Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245627888431104
+    m_Localized: Don't have an account?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245660553670656
+    m_Localized: Register
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248719014981632
+    m_Localized: Sign Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248898396975104
+    m_Localized: Confirm Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 249021013258240
+    m_Localized: Already have an account?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

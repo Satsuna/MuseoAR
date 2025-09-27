@@ -19,6 +19,94 @@ MonoBehaviour:
     m_Key: GetStarted_Button
     m_Metadata:
       m_Items: []
+  - m_Id: 213419790266368
+    m_Key: Select A Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 213973207707648
+    m_Key: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216271279452160
+    m_Key: Log In
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216409536294912
+    m_Key: Email
+    m_Metadata:
+      m_Items: []
+  - m_Id: 217389329903616
+    m_Key: I have read the
+    m_Metadata:
+      m_Items: []
+  - m_Id: 217425438666752
+    m_Key: Terms and Conditions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 218534311981056
+    m_Key: TOS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237192727851008
+    m_Key: Please enter the following
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237338760933376
+    m_Key: gender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237779385151488
+    m_Key: nationality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237961136926720
+    m_Key: enter text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242353193971712
+    m_Key: male
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242355068825600
+    m_Key: female
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245558602723328
+    m_Key: log in
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245572020301824
+    m_Key: enter your credentials
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245596498259968
+    m_Key: email
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245614533767168
+    m_Key: password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245627888431104
+    m_Key: dont have an acc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245660553670656
+    m_Key: register
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248719014981632
+    m_Key: signup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248898396975104
+    m_Key: Confirm Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 249021013258240
+    m_Key: Already have an acc
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

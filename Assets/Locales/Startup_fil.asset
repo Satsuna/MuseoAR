@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Startup_fil
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fil
+  m_SharedData: {fileID: 11400000, guid: 2dae37994543bd24e8be03a86065a581, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 129873047552
+    m_Localized: Magsimula
+    m_Metadata:
+      m_Items: []
+  - m_Id: 213419790266368
+    m_Localized: Pumili ng lengguwahe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 213973207707648
+    m_Localized: Susunod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216271279452160
+    m_Localized: Mag-log in
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216409536294912
+    m_Localized: Email
+    m_Metadata:
+      m_Items: []
+  - m_Id: 217389329903616
+    m_Localized: 'Nabasa ko ang mga '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 217425438666752
+    m_Localized: tuntunin at kundisyon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 218534311981056
+    m_Localized: "<b>1. Pagtanggap ng mga Tuntunin</b>  \r\nSa pamamagitan ng pag-download,
+      pag-access, o paggamit ng MuseoAR mobile application (ang \u201CApp\u201D),
+      sumasang-ayon ka na masaklaw ng mga Tuntunin at Kundisyong ito.  \r\nKung hindi
+      ka sumasang-ayon sa mga tuntuning ito, mangyaring huwag gamitin ang App.  \r\n\r\n<b>2.
+      Paglalarawan ng Serbisyo</b>  \r\nAng MuseoAR ay isang augmented reality (AR)
+      mobile application na idinisenyo upang mapahusay ang karanasan sa museo sa
+      pamamagitan ng pagbibigay ng interaktibo at multilingguwal na impormasyon tungkol
+      sa mga artepakto at eksibit.  \r\nAng App ay para lamang sa impormasyonal at
+      edukasyonal na layunin.  \r\n\r\n<b>3. Obligasyon ng Gumagamit</b>  \r\nSumasang-ayon
+      kang gamitin ang App alinsunod sa lahat ng naaangkop na batas at regulasyon. 
+      \r\nHindi mo dapat gamitin ang App sa anumang paraan na maaaring makapinsala
+      sa functionality nito o sa access rights ng ibang mga gumagamit.  \r\n\r\n<b>4.
+      Mga Karapatan sa Intelektwal na Ari-arian</b>  \r\nLahat ng nilalaman na makikita
+      sa App, kabilang ngunit hindi limitado sa teksto, grapiko, imahe, software,
+      at multimedia, ay intelektwal na ari-arian ng MuseoAR o ng mga tagapaglisensya
+      nito.  \r\nHindi ka pinahihintulutang baguhin, ipamahagi, kopyahin, o gamitin
+      ang anumang nilalaman para sa komersyal na layunin nang walang nakasulat na
+      pahintulot.  \r\n\r\n<b>5. Pagkapribado at Pagkolekta ng Datos</b>  \r\nMaaaring
+      mangolekta ang App ng datos gaya ng mga kagustuhan sa wika, kasaysayan ng pag-scan,
+      at impormasyon ng device para mapahusay ang karanasan ng gumagamit.  \r\nPara
+      sa detalyadong impormasyon, sumangguni sa aming Patakaran sa Privacy.  \r\nKami
+      ay nakatuon sa pagprotekta sa iyong personal na impormasyon at pagtiyak na
+      ito ay gagamitin nang may pananagutan.  \r\n\r\n<b>6. Mga Limitasyon ng Pananagutan</b> 
+      \r\nAng MuseoAR at ang mga developer nito ay hindi mananagot para sa anumang
+      direktang, hindi direktang, incidental, espesyal, o consequential na pinsala
+      na resulta ng paggamit o kawalan ng kakayahang gamitin ang App.  \r\nMaaaring
+      kabilang sa App ang mga link sa mga third-party na website para sa karagdagang
+      mapagkukunan.  \r\nAng MuseoAR ay hindi responsable para sa nilalaman o availability
+      ng mga panlabas na site na ito.  \r\n\r\n<b>7. Mga Update at Pagbabago</b> 
+      \r\nMaaaring i-update o baguhin namin ang App at ang mga Tuntunin at Kundisyong
+      ito anumang oras nang walang paunang abiso.  \r\nSa pamamagitan ng patuloy
+      na paggamit ng App matapos ipaskil ang mga pagbabago, tinatanggap mo ang mga
+      pagbabagong iyon.  \r\nInirerekomenda naming suriin ang pahinang ito paminsan-minsan
+      para sa mga update.  \r\n\r\n<b>8. Pagwawakas ng Access</b>  \r\nAng MuseoAR
+      ay may karapatang tapusin o suspindihin ang iyong access sa App nang walang
+      abiso para sa anumang paglabag sa mga Tuntunin na ito.  \r\nSa oras ng pagwawakas,
+      lahat ng karapatang ipinagkaloob sa iyo sa ilalim ng mga Tuntunin na ito ay
+      agad na mawawalan ng bisa.  \r\n\r\n<b>9. Namumuno na Batas</b>  \r\nAng mga
+      Tuntunin at Kundisyong ito ay pinamumunuan at ipinatutupad alinsunod sa mga
+      batas ng Pilipinas, nang walang pagsasaalang-alang sa prinsipyo ng conflict
+      of laws.  \r\n\r\n<b>10. Impormasyon sa Pakikipag-ugnayan</b>  \r\nPara sa
+      anumang mga tanong o alalahanin hinggil sa mga Tuntunin at Kundisyong ito,
+      mangyaring makipag-ugnayan sa amin sa:  \r\nEmail: museoar2024@gmail.com  \r\nAddress:
+      STI Academic Center, Alabang-Zapote Road, kanto ng V.Guinto, Las Pi\xF1as,
+      1740 Metro Manila.  \r\n\r\n<b>11. Mga Paalala</b>  \r\nAng App ay ibinibigay
+      batay sa \u201Cas is\u201D nang walang anumang garantiya, hayag o ipinahiwatig. 
+      \r\nHindi ginagarantiya ng MuseoAR na ang App ay magiging walang error o tuloy-tuloy. 
+      \r\n\r\n<b>12. Pagkilala ng Gumagamit</b>  \r\nSa paggamit ng App, kinikilala
+      mo na nabasa, naunawaan, at sumasang-ayon ka na masaklaw ng mga Tuntunin at
+      Kundisyong ito.  \r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237192727851008
+    m_Localized: Paki ilagay ang mga sumusunod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237338760933376
+    m_Localized: Ilagay ang iyong kasarian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237779385151488
+    m_Localized: Ilagay ang iyong nasyonalidad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 237961136926720
+    m_Localized: Maglagay ng teksto...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242353193971712
+    m_Localized: Lalaki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242355068825600
+    m_Localized: Babae
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245558602723328
+    m_Localized: Mag-log in
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245572020301824
+    m_Localized: Ilagay ang iyong detalye
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245596498259968
+    m_Localized: Email
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245614533767168
+    m_Localized: Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245627888431104
+    m_Localized: Wala ka pang account?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245660553670656
+    m_Localized: Magparehistro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248719014981632
+    m_Localized: Mag-sign up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248898396975104
+    m_Localized: Kumpirmahin ang Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 249021013258240
+    m_Localized: May account ka na?
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
