@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 709eb4daa64ce564c86fcafa56ab24dd
+    m_Address: Filipino (fil)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8378ed69fecff404f85a0840390a583a
     m_Address: Japanese (ja)
     m_ReadOnly: 1
