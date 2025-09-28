@@ -6,6 +6,8 @@ using Firebase.Auth;
 using UnityEngine.SceneManagement;
 using Firebase.Database;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class TrackedImageUIUpdater : MonoBehaviour
 {
@@ -18,16 +20,19 @@ public class TrackedImageUIUpdater : MonoBehaviour
     public GameObject indicator;
     public Button m_button;
 
-    private Dictionary<string, string> textDictionary = new Dictionary<string, string>();
+    [SerializeField] private LocalizedString defaultScanMessage;
+
+    private Dictionary<string, LocalizedString> textDictionary = new Dictionary<string, LocalizedString>();
 
     [System.Serializable]
     public class ImageTextMapping
     {
         public string imageName;
-        [TextArea] public string displayText;
+        public LocalizedString localizedText; // ✅ localized instead of plain string
     }
 
-    private void Start() {
+    private void Start()
+    {
         m_button.onClick.AddListener(RemoveIndicator);
     }
 
@@ -43,7 +48,7 @@ public class TrackedImageUIUpdater : MonoBehaviour
         {
             if (!textDictionary.ContainsKey(mapping.imageName))
             {
-                textDictionary[mapping.imageName] = mapping.displayText;
+                textDictionary[mapping.imageName] = mapping.localizedText;
             }
         }
     }
@@ -63,7 +68,7 @@ public class TrackedImageUIUpdater : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             UpdateUIText(trackedImage);
-            if (moreInformationGameObject.activeSelf == false)
+            if (!moreInformationGameObject.activeSelf)
             {
                 indicator.SetActive(true);
             }
@@ -84,15 +89,23 @@ public class TrackedImageUIUpdater : MonoBehaviour
     {
         string imageName = trackedImage.referenceImage.name;
 
-        if (textDictionary.TryGetValue(imageName, out string displayText))
+        if (textDictionary.TryGetValue(imageName, out LocalizedString localizedText))
         {
-            uiText.text = displayText;
+            // Automatically updates UI whenever language changes
+            localizedText.StringChanged += (value) =>
+            {
+                uiText.text = value;
+            };
         }
     }
 
     private void ResetUIText()
     {
-        uiText.text = "Scan an image...";
+        // Show default scan message (also localized)
+        defaultScanMessage.StringChanged += (value) =>
+        {
+            uiText.text = value;
+        };
     }
 
     public void SignOut()
@@ -107,9 +120,7 @@ public class TrackedImageUIUpdater : MonoBehaviour
     {
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 
-        string Content = feedback;
-
-        Feedback feedback1 = new Feedback(Content);
+        Feedback feedback1 = new Feedback(feedback);
         string json = JsonUtility.ToJson(feedback1);
 
         reference.Child("users").Child(userId).Child("data").Child("feedback").Push().SetRawJsonValueAsync(json);
@@ -127,11 +138,10 @@ public class Feedback
 {
     public string feedback;
 
-    public Feedback() {
+    public Feedback() { }
 
-    }
-
-    public Feedback(string content) {
+    public Feedback(string content)
+    {
         feedback = content;
     }
 }

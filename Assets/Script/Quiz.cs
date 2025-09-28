@@ -1,19 +1,21 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.XR.ARFoundation; // ✅ AR Foundation
+using UnityEngine.XR.ARFoundation;
 using System.Collections.Generic;
+using UnityEngine.Localization; // ✅ Localization
+using UnityEngine.Localization.Settings;
 
 public class Quiz : MonoBehaviour
 {
     [System.Serializable]
     public class Question
     {
-        public string questionText;
-        public string choiceA;
-        public string choiceB;
-        public int correctAnswer; // 0 = A, 1 = B
         public string questionForPainting; // Painting this question is for
+        public LocalizedString questionText; // ✅ Localized
+        public LocalizedString choiceA;      // ✅ Localized
+        public LocalizedString choiceB;      // ✅ Localized
+        public int correctAnswer; // 0 = A, 1 = B
     }
 
     [Header("Dependencies")]
@@ -127,9 +129,19 @@ public class Quiz : MonoBehaviour
         lastQuestionIndex = randomIndex;
         currentQuestion = filteredQuestions[randomIndex];
 
-        questionTextUI.text = currentQuestion.questionText;
-        choiceAButton.GetComponentInChildren<TMP_Text>().text = currentQuestion.choiceA;
-        choiceBButton.GetComponentInChildren<TMP_Text>().text = currentQuestion.choiceB;
+        // ✅ Subscribe to localization updates
+        currentQuestion.questionText.StringChanged += (value) =>
+        {
+            questionTextUI.text = value;
+        };
+        currentQuestion.choiceA.StringChanged += (value) =>
+        {
+            choiceAButton.GetComponentInChildren<TMP_Text>().text = value;
+        };
+        currentQuestion.choiceB.StringChanged += (value) =>
+        {
+            choiceBButton.GetComponentInChildren<TMP_Text>().text = value;
+        };
 
         choiceAButton.onClick.RemoveAllListeners();
         choiceBButton.onClick.RemoveAllListeners();
