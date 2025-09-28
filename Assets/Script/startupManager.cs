@@ -11,7 +11,7 @@ public class startupManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("HasLaunchedBefore"))
         {
-            //SceneManager.LoadScene("Sign In");
+            SceneManager.LoadScene("Sign In");
         }
 
         else

@@ -151,6 +151,310 @@ MonoBehaviour:
     m_Localized: Already have an account?
     m_Metadata:
       m_Items: []
+  - m_Id: 604018179665920
+    m_Localized: Quiz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604389774028800
+    m_Localized: More Information
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604625145786368
+    m_Localized: Help
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604649611161600
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604662512840704
+    m_Localized: Information about the painting will appear here
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604706599170048
+    m_Localized: Refresh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608321325854720
+    m_Localized: Change Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608346080636928
+    m_Localized: Feedback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608357472366592
+    m_Localized: Logout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608796381114368
+    m_Localized: Send us a feedback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608902979350528
+    m_Localized: Submit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 610190500655104
+    m_Localized: "The Spoliarium is Juan Luna\u2019s most enormous artwork in the
+      Philippines. This monumental work of art won the gold medal during the 1884
+      Madrid Exposition of Fine Arts."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 610308696141824
+    m_Localized: "This painting is Hidalgo\u2019s interpretation of a violent and
+      historical event involving Fernando Bustamante and the Spanish friars in Manila
+      during the Spanish colonial period."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 610472546627584
+    m_Localized: "Araw ng Kagitingan remembers The Fall of Bataan\u2014where over
+      70,000 Filipino and American prisoners of war surrendered to the Japanese forces.
+      Of this number, over 60,000 were Filipino soldiers. The surrender happened
+      in Bataan, the last stand of the Filipino and American troops."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 610739056898048
+    m_Localized: "Una Bulaque\xF1a, or The Woman from Bulacan, is one of Luna\u2019s
+      paintings he did when he returned to the Philippines in 1894. Luna\u2019s expertise
+      and excellence in the traditional style are manifested in this painting with
+      her lifelike rendition of the details of the Bulaque\xF1a\u2019s pi\xF1a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 610899212201984
+    m_Localized: This series is composed of 14 oil paintings on canvas, considered
+      to be the earliest known works of art to depict a historical event in the Philippines,
+      the Basi Revolt of September 1807 in Ilocos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 616644423020544
+    m_Localized: What award did the Spoliarium win?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 617080647413760
+    m_Localized: Gold Medal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 617169113673728
+    m_Localized: Silver Medal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 617262013313024
+    m_Localized: What is the name of the artist who painted the Spoliarium?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 617478691057664
+    m_Localized: Juan Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 618034813825024
+    m_Localized: Felix Resurreccion Hiladgo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620105495572480
+    m_Localized: When did the Spoliarium win a gold medal?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620859228778496
+    m_Localized: 1887
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620878535159808
+    m_Localized: 1884
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620978061799424
+    m_Localized: "\u200BWhere did the painting win an award?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621175428968448
+    m_Localized: Madrid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621181569429504
+    m_Localized: Denmark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621373517557760
+    m_Localized: Who painted The Assassination of Governor Bustamante?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621488374378496
+    m_Localized: Juan Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621497077559296
+    m_Localized: Felix Resurreccion Hiladgo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621848405045248
+    m_Localized: Who was assassinated?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621963983286272
+    m_Localized: Felix Resurreccion Hiladgo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621966940270592
+    m_Localized: Fernando Bustamante and his son
+    m_Metadata:
+      m_Items: []
+  - m_Id: 622634438586368
+    m_Localized: Where did the assassination take place?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 625620011282432
+    m_Localized: Manila
+    m_Metadata:
+      m_Items: []
+  - m_Id: 625622108434432
+    m_Localized: Cebu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 626028108673024
+    m_Localized: "\u200BWho is the artist of the painting?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 626286666543104
+    m_Localized: Juan Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 626262524129280
+    m_Localized: Fernando Amorsolo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627001782792192
+    m_Localized: When did Juan Luna return to the Philippines to do the painting?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627191436636160
+    m_Localized: 1899
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627216266915840
+    m_Localized: 1894
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627285691035648
+    m_Localized: "What is the English title of \u201CUna Bulaquena\u201D? "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627416872087552
+    m_Localized: The Woman from Bulacan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627424728018944
+    m_Localized: The First Woman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627582689701888
+    m_Localized: 'How many prisoners of war surrendered? '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627770120564736
+    m_Localized: 60,000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627773585059840
+    m_Localized: 70,000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627903503626240
+    m_Localized: How many were the Filipino?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628006247297024
+    m_Localized: 60,000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628007790800896
+    m_Localized: 70,000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628214540627968
+    m_Localized: Who did they surrender to?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628326549516288
+    m_Localized: Japanese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628333428174848
+    m_Localized: Spaniards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628625020383232
+    m_Localized: Where was their last stand?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628756889300992
+    m_Localized: Bataan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628758864818176
+    m_Localized: Manila
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629261032058880
+    m_Localized: 'What medium was used for the paintings? '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629365742858240
+    m_Localized: Oil on canvas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629378757783552
+    m_Localized: Watercolor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629662267568128
+    m_Localized: What historical event is depicted in the series?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629823597277184
+    m_Localized: Basi Revolt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629853511053312
+    m_Localized: 'Philippine Revolution '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630016786919424
+    m_Localized: "\u200BIn what year did the Basi Revolt occur? "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630127956946944
+    m_Localized: 1896
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630143337459712
+    m_Localized: 1807
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630294756028416
+    m_Localized: What country's history is shown?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630458338078720
+    m_Localized: Spain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630461089542144
+    m_Localized: Philippines
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630669814886400
+    m_Localized: How many paintings are in the series?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630770092306432
+    m_Localized: 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630772084600832
+    m_Localized: 14
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

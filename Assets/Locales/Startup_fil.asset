@@ -159,6 +159,310 @@ MonoBehaviour:
     m_Localized: May account ka na?
     m_Metadata:
       m_Items: []
+  - m_Id: 604018179665920
+    m_Localized: Quiz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604389774028800
+    m_Localized: Karagdagang impormasyon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604625145786368
+    m_Localized: Tulong
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604649611161600
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604662512840704
+    m_Localized: Dito makikita ang impormasyon tungkol sa painting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604706599170048
+    m_Localized: I-refresh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608346080636928
+    m_Localized: Feedback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608321325854720
+    m_Localized: Baguhin ang Wika
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608357472366592
+    m_Localized: Mag-logout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608796381114368
+    m_Localized: Ipadala ang feedback mo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608902979350528
+    m_Localized: Isumite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 610190500655104
+    m_Localized: Ang Spoliarium ang pinakamalaking obra ni Juan Luna sa Pilipinas.
+      Ang makasaysayang obra na ito ay nagwagi ng gintong medalya noong 1884 Madrid
+      Exposition of Fine Arts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 610308696141824
+    m_Localized: Ang painting na ito ay interpretasyon ni Hidalgo sa isang marahas
+      at makasaysayang pangyayari na kinasasangkutan ni Fernando Bustamante at ng
+      mga paring Kastila sa Maynila noong panahon ng pananakop ng Espanya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 610472546627584
+    m_Localized: "Ang Araw ng Kagitingan ay pag-alala sa Pagbagsak ng Bataan\u2014kung
+      saan higit 70,000 Pilipino at Amerikanong bihag ng digmaan ang sumuko sa mga
+      puwersang Hapones. Mahigit 60,000 dito ay mga sundalong Pilipino. Nangyari
+      ang pagsuko sa Bataan, ang huling pagtatanggol ng mga tropang Pilipino at Amerikano."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 610739056898048
+    m_Localized: "Ang Una Bulaque\xF1a, o Ang Babae mula sa Bulacan, ay isa sa mga
+      painting ni Luna nang siya ay bumalik sa Pilipinas noong 1894. Makikita sa
+      painting na ito ang husay ni Luna sa tradisyonal na estilo sa makatotohanang
+      paglalarawan ng detalye ng pi\xF1a ng Bulaque\xF1a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 610899212201984
+    m_Localized: "Ang seryeng ito ay binubuo ng 14 na langis sa canvas, na kinikilalang
+      pinaka laon na obra na naglalarawan ng isang makasaysayang pangyayari sa Pilipinas\u2014ang
+      Basi Revolt noong Setyembre 1807 sa Ilocos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 616644423020544
+    m_Localized: Anong parangal ang napanalunan ng Spoliarium?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 617080647413760
+    m_Localized: Gintong Medalya
+    m_Metadata:
+      m_Items: []
+  - m_Id: 617169113673728
+    m_Localized: Pilak na Medalya
+    m_Metadata:
+      m_Items: []
+  - m_Id: 617262013313024
+    m_Localized: Sino ang pintor ng Spoliarium?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 617478691057664
+    m_Localized: Juan Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 618034813825024
+    m_Localized: Felix Resurreccion Hiladgo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620105495572480
+    m_Localized: Kailan nanalo ng gintong medalya ang Spoliarium?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620859228778496
+    m_Localized: 1887
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620878535159808
+    m_Localized: 1884
+    m_Metadata:
+      m_Items: []
+  - m_Id: 620978061799424
+    m_Localized: Saan nanalo ng parangal ang painting?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621175428968448
+    m_Localized: Madrid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621181569429504
+    m_Localized: Denmark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621373517557760
+    m_Localized: Sino ang nagpinta ng The Assassination of Governor Bustamante?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621488374378496
+    m_Localized: Juan Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621497077559296
+    m_Localized: Felix Resurreccion Hiladgo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621848405045248
+    m_Localized: Sino ang pinaslang?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621963983286272
+    m_Localized: Felix Resurreccion Hiladgo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621966940270592
+    m_Localized: Fernando Bustamante at ang kanyang anak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 622634438586368
+    m_Localized: Saan naganap ang pagpatay?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 625620011282432
+    m_Localized: Manila
+    m_Metadata:
+      m_Items: []
+  - m_Id: 625622108434432
+    m_Localized: Cebu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 626028108673024
+    m_Localized: Sino ang pintor ng painting?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 626286666543104
+    m_Localized: Juan Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 626262524129280
+    m_Localized: Fernando Amorsolo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627001782792192
+    m_Localized: Kailan bumalik si Juan Luna sa Pilipinas para gawin ang painting?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627191436636160
+    m_Localized: 1899
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627216266915840
+    m_Localized: 1894
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627285691035648
+    m_Localized: "Ano ang English title ng \u201CUna Bulaque\xF1a\u201D?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627416872087552
+    m_Localized: The Woman from Bulacan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627424728018944
+    m_Localized: The First Woman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627582689701888
+    m_Localized: Ilan ang mga bihag ng digmaan na sumuko?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627770120564736
+    m_Localized: 60,000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627773585059840
+    m_Localized: 70,000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 627903503626240
+    m_Localized: Ilan ang mga Pilipino?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628006247297024
+    m_Localized: 60,000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628007790800896
+    m_Localized: 70,000
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628214540627968
+    m_Localized: Kanino sila sumuko?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628326549516288
+    m_Localized: Hapones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628333428174848
+    m_Localized: Kastila
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628625020383232
+    m_Localized: Saan ang huling pagtatanggol nila?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628756889300992
+    m_Localized: Bataan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628758864818176
+    m_Localized: Manila
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629261032058880
+    m_Localized: Anong medium ang ginamit sa pinta?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629365742858240
+    m_Localized: Langis sa canvas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629378757783552
+    m_Localized: Watercolor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629662267568128
+    m_Localized: Anong makasaysayang pangyayari ang ipinapakita sa serye?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629823597277184
+    m_Localized: Basi Revolt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629853511053312
+    m_Localized: 'Philippine Revolution '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630016786919424
+    m_Localized: Sa anong taon naganap ang Basi Revolt?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630127956946944
+    m_Localized: 1896
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630143337459712
+    m_Localized: 1807
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630294756028416
+    m_Localized: Kasaysayan ng anong bansa ang ipinakita?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630458338078720
+    m_Localized: Espanya
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630461089542144
+    m_Localized: Pilipinas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630669814886400
+    m_Localized: Ilan ang mga pinta sa seryeng ito?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630770092306432
+    m_Localized: 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630772084600832
+    m_Localized: 14
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
