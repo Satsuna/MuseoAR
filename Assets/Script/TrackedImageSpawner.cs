@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Firebase.Database; // ✅ added
+using Firebase.Extensions; // ✅ added
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
@@ -7,6 +9,7 @@ using UnityEngine.XR.ARSubsystems;
 
 public class TrackedImageSpawner : MonoBehaviour
 {
+    [SerializeField] private XRReferenceImageLibrary imageLibrary;
     [SerializeField] private ARTrackedImageManager trackedImageManager;
     [SerializeField] private List<PrefabMapping> prefabMappings;
     [SerializeField] private ARSession arSession;
@@ -15,6 +18,7 @@ public class TrackedImageSpawner : MonoBehaviour
     private Dictionary<string, GameObject> prefabDictionary = new Dictionary<string, GameObject>();
     private Dictionary<string, GameObject> spawnedObjects = new Dictionary<string, GameObject>();
     public TextMeshProUGUI debug;
+    private DatabaseReference dbReference; // ✅ added
 
     [Serializable]
     public class PrefabMapping
@@ -26,7 +30,7 @@ public class TrackedImageSpawner : MonoBehaviour
     private void Awake()
     {
         arSession.Reset();
-        
+
         // Convert list to dictionary for quick lookup
         foreach (var mapping in prefabMappings)
         {
@@ -35,6 +39,9 @@ public class TrackedImageSpawner : MonoBehaviour
                 prefabDictionary[mapping.imageName] = mapping.prefab;
             }
         }
+
+        // Initialize Firebase Database reference
+        dbReference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
     private void OnEnable()
@@ -87,8 +94,14 @@ public class TrackedImageSpawner : MonoBehaviour
 
                 Debug.Log("Spawned a 3d Object! " + spawnedObject);
                 debug.text = "Spawned a 3d object " + spawnedObject + " at " + trackedImage.transform.position;
+
+
+                IncrementTotalScans();
+                IncrementPaintingScan(imageName);
             }
         }
+        
+
     }
 
     private void UpdatePrefab(ARTrackedImage trackedImage)
@@ -115,5 +128,94 @@ public class TrackedImageSpawner : MonoBehaviour
             Destroy(obj);
             spawnedObjects.Remove(trackedImage.referenceImage.name);
         }
+    }
+
+    public List<string> GetImageNames()
+    {
+        List<string> imageNames = new List<string>();
+        foreach (var img in imageLibrary)
+        {
+            imageNames.Add(img.name);
+        }
+        return imageNames;
+    }
+
+    public void UploadImageList(List<string> images)
+    {
+        for (int i = 0; i < images.Count; i++)
+        {
+            dbReference.Child("images").Child(i.ToString()).SetValueAsync(images[i]);
+        }
+    }
+
+    private void IncrementTotalScans()
+    {
+        if (dbReference == null) return;
+
+        DatabaseReference scanRef = dbReference.Child("scans").Child("total_scans");
+
+        scanRef.RunTransaction(mutableData =>
+        {
+            int currentValue = 0;
+
+            if (mutableData.Value != null)
+            {
+                int.TryParse(mutableData.Value.ToString(), out currentValue);
+            }
+
+            mutableData.Value = currentValue + 1;
+            return TransactionResult.Success(mutableData);
+        }).ContinueWithOnMainThread(task =>
+        {
+            if (task.Exception != null)
+            {
+                Debug.LogError("Transaction failed: " + task.Exception);
+            }
+            else if (task.IsCompleted)
+            {
+                Debug.Log("Scan counter incremented!");
+            }
+        });
+    }
+
+    private void IncrementPaintingScan(string paintingName)
+    {
+        if (dbReference == null) return;
+
+        string safeName = SanitizeKey(paintingName);
+        DatabaseReference paintingRef = dbReference.Child("scans").Child(safeName).Child("scans");
+
+        paintingRef.RunTransaction(mutableData =>
+        {
+            int currentValue = 0;
+            if (mutableData.Value != null)
+            {
+                int.TryParse(mutableData.Value.ToString(), out currentValue);
+            }
+            mutableData.Value = currentValue + 1;
+            return TransactionResult.Success(mutableData);
+        }).ContinueWithOnMainThread(task =>
+        {
+            if (task.Exception != null)
+            {
+                Debug.LogError($"Transaction failed for {paintingName}: " + task.Exception);
+            }
+            else if (task.IsCompleted)
+            {
+                Debug.Log($"Scan counter incremented for {paintingName}!");
+            }
+        });
+    }
+
+    private string SanitizeKey(string raw)
+    {
+        string safe = raw.Replace(".", "_")
+                        .Replace("$", "_")
+                        .Replace("#", "_")
+                        .Replace("[", "_")
+                        .Replace("]", "_")
+                        .Replace("/", "_")
+                        .Replace(" ", "_");
+        return safe;
     }
 }
