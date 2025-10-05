@@ -28,7 +28,7 @@ public class TrackedImageUIUpdater : MonoBehaviour
     public class ImageTextMapping
     {
         public string imageName;
-        public LocalizedString localizedText; // ✅ localized instead of plain string
+        public LocalizedString localizedText;
     }
 
     private void Start()
@@ -91,7 +91,6 @@ public class TrackedImageUIUpdater : MonoBehaviour
 
         if (textDictionary.TryGetValue(imageName, out LocalizedString localizedText))
         {
-            // Automatically updates UI whenever language changes
             localizedText.StringChanged += (value) =>
             {
                 uiText.text = value;
@@ -101,7 +100,6 @@ public class TrackedImageUIUpdater : MonoBehaviour
 
     private void ResetUIText()
     {
-        // Show default scan message (also localized)
         defaultScanMessage.StringChanged += (value) =>
         {
             uiText.text = value;
@@ -113,7 +111,7 @@ public class TrackedImageUIUpdater : MonoBehaviour
         FirebaseAuth auth = FirebaseAuth.DefaultInstance;
         auth.SignOut();
         PlayerPrefs.DeleteKey("LoggedIn");
-        SceneManager.LoadScene("Sign In");
+        SceneManager.LoadScene("Authentication");
     }
 
     private void SubmitFeedback(string userId, string feedback)

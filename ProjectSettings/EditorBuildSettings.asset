@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Startup.unity
     guid: 8ec6ba70ac5c1af4cb9f3aca9ee24272
   - enabled: 1
-    path: Assets/Scenes/Sign In.unity
+    path: Assets/Scenes/Authentication.unity
     guid: 0840a3b2a9248744da2fecd6d4e415b4
   - enabled: 1
     path: Assets/Scenes/User Data.unity
