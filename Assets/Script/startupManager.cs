@@ -6,12 +6,15 @@ public class startupManager : MonoBehaviour
 {
     public Toggle toggle;
     public Button button;
+    public Button tosButton;
+    public ScrollRect scrollRect;
 
     public bool debug = false;
 
     void Start()
     {
-        if (debug == false) {
+        if (debug == false)
+        {
             if (PlayerPrefs.HasKey("HasLaunchedBefore"))
             {
                 SceneManager.LoadScene("Authentication");
@@ -23,11 +26,24 @@ public class startupManager : MonoBehaviour
                 PlayerPrefs.Save();
             }
         }
+        toggle.interactable = false;
+    }
+
+    void Update()
+    {
+        if (scrollRect.verticalNormalizedPosition <= 0.001f)
+        {
+            tosButton.interactable = true;
+        }
+        else
+        {
+            tosButton.interactable = false;
+        }
     }
     
     public void TCToggle()
     {
-        if (toggle.isOn == true)
+        if (toggle.isOn == true && PlayerPrefs.HasKey("HasReadTC"))
         {
             button.interactable = true;
         }
@@ -37,7 +53,14 @@ public class startupManager : MonoBehaviour
         }
     }
 
-    public void changeScene() {
+    public void TOSButton()
+    {
+        toggle.interactable = true;
+        PlayerPrefs.SetInt("HasReadTC", 1);
+    }
+
+    public void ToAuthentication()
+    {
         SceneManager.LoadScene("Authentication");
     }
 }
