@@ -14,7 +14,7 @@ public class startupManager : MonoBehaviour
         if (debug == false) {
             if (PlayerPrefs.HasKey("HasLaunchedBefore"))
             {
-                SceneManager.LoadScene("Sign In");
+                SceneManager.LoadScene("Authentication");
             }
 
             else
@@ -23,28 +23,21 @@ public class startupManager : MonoBehaviour
                 PlayerPrefs.Save();
             }
         }
-
-        
     }
+    
     public void TCToggle()
     {
-        if(toggle.isOn == true) {
+        if (toggle.isOn == true)
+        {
             button.interactable = true;
         }
-        else {
+        else
+        {
             button.interactable = false;
         }
     }
 
     public void changeScene() {
-        if (PlayerPrefs.HasKey("ChangeLanguage"))
-        {
-            SceneManager.LoadScene("Camera");
-            PlayerPrefs.DeleteKey("ChangeLanguage");
-        }
-        else
-        {
-            SceneManager.LoadScene("Sign In");
-        }
+        SceneManager.LoadScene("Authentication");
     }
 }
