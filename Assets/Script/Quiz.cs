@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using System.Collections.Generic;
-using UnityEngine.Localization; // ✅ Localization
+using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 
 public class Quiz : MonoBehaviour
@@ -12,9 +12,9 @@ public class Quiz : MonoBehaviour
     public class Question
     {
         public string questionForPainting; // Painting this question is for
-        public LocalizedString questionText; // ✅ Localized
-        public LocalizedString choiceA;      // ✅ Localized
-        public LocalizedString choiceB;      // ✅ Localized
+        public LocalizedString questionText;
+        public LocalizedString choiceA;
+        public LocalizedString choiceB;
         public int correctAnswer; // 0 = A, 1 = B
     }
 
@@ -129,7 +129,6 @@ public class Quiz : MonoBehaviour
         lastQuestionIndex = randomIndex;
         currentQuestion = filteredQuestions[randomIndex];
 
-        // ✅ Subscribe to localization updates
         currentQuestion.questionText.StringChanged += (value) =>
         {
             questionTextUI.text = value;
@@ -157,6 +156,9 @@ public class Quiz : MonoBehaviour
         feedbackSpawner.SpawnFeedback(isCorrect);
         feedbackPanel.ShowFeedback(isCorrect);
 
+        choiceAButton.interactable = false;
+        choiceBButton.interactable = false;
+
         Invoke(nameof(DisableQuiz), 1.5f);
     }
 
@@ -164,5 +166,8 @@ public class Quiz : MonoBehaviour
     {
         quizPanel.SetActive(false);
         popUpIcon.SetActive(true);
+
+        choiceAButton.interactable = true;
+        choiceBButton.interactable = true;
     }
 }
