@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Firebase.Database; // ✅ added
-using Firebase.Extensions; // ✅ added
+using Firebase.Database;
+using Firebase.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
@@ -18,7 +18,7 @@ public class TrackedImageSpawner : MonoBehaviour
     private Dictionary<string, GameObject> prefabDictionary = new Dictionary<string, GameObject>();
     private Dictionary<string, GameObject> spawnedObjects = new Dictionary<string, GameObject>();
     public TextMeshProUGUI debug;
-    private DatabaseReference dbReference; // ✅ added
+    private DatabaseReference dbReference;
 
     [Serializable]
     public class PrefabMapping
