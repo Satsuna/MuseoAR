@@ -455,6 +455,167 @@ MonoBehaviour:
     m_Localized: 14
     m_Metadata:
       m_Items: []
+  - m_Id: 4281112982024192
+    m_Localized: Please read the terms and conditions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4939698603126784
+    m_Localized: This series is composed of 14 oil paintings on canvas, considered
+      to be the earliest known works of art to depict a historical event in the Philippines,
+      the Basi Revolt of September 1807 in Ilocos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940150098980864
+    m_Localized: What type of paintings are in the series?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940202326454272
+    m_Localized: Oil paintings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940223914536960
+    m_Localized: Watercolor paintings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940512100970496
+    m_Localized: How many paintings are in the series?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940595508899840
+    m_Localized: Fourteen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940954369355776
+    m_Localized: Ten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4941071902142464
+    m_Localized: What historical event do the paintings depict?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4941167448387584
+    m_Localized: Philippine Revolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4941258368315392
+    m_Localized: Basi Revolt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5025120603697152
+    m_Localized: Enter your Age
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5025363533590528
+    m_Localized: Enter age...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5648559907631104
+    m_Localized: Spoliarium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5648533571596288
+    m_Localized: Juan Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5649384532963328
+    m_Localized: Bataan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5649398860705792
+    m_Localized: Fernando Amorsolo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5652031218479104
+    m_Localized: The Assassination of Governor Bustamante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5652083294957568
+    m_Localized: "F\xE9lix Resurrecci\xF3n Hidalgo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5654636246167552
+    m_Localized: Una Bulaquena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5654652855611392
+    m_Localized: Juan Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5655927320047616
+    m_Localized: Basi Revolt II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5656219885334528
+    m_Localized: Basi Revolt VI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5656398009036800
+    m_Localized: Esteban Pichay Villanueva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5663298385702912
+    m_Localized: "\"In 1884, Juan Luna moved to Paris, marking a new phase in his
+      art where his style became lighter and more expressive. During this period,
+      he painted notable works such as Ensue\xF1os de Amor (1886) and became active
+      in the Philippine Propaganda Movement with Dr. Jos\xE9 Rizal and Dr. Ariston
+      Bautista Lin.\n\nHis 1892 painting Parisian Life captures a relaxed moment
+      with his two friends in a Paris caf\xE9, symbolizing the final calm before
+      they all returned to the Philippines to take part in the revolutionary movement.
+      The artwork stands as one of Luna\u2019s last major pieces from his Parisian
+      years and reflects both his artistic maturity and deep connection to his fellow
+      patriots.\""
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5663331864637440
+    m_Localized: The Parisian Life
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665181938577408
+    m_Localized: "Juan Luna\u2019s painting Parisian Life was created during his
+      stay in which city?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665277426102272
+    m_Localized: Paris
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665356123828224
+    m_Localized: Madrid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665430677581824
+    m_Localized: What is the general mood shown in Parisian Life?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665566396870656
+    m_Localized: Relaxed and cheerful
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665583090200576
+    m_Localized: Dark and somber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665746672250880
+    m_Localized: "Is Parisian Life considered one of Juan Luna\u2019s last major
+      works from his Parisian period?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665818713616384
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665832840032256
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6736308089745408
+    m_Localized: Forgot Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6737208317407232
+    m_Localized: Reset Password
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

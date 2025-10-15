@@ -13,8 +13,12 @@ public class TrackedImageUIUpdater : MonoBehaviour
 {
     [SerializeField] private ARTrackedImageManager trackedImageManager;
     [SerializeField] private List<ImageTextMapping> imageTextMappings;
+    [SerializeField] private TextMeshProUGUI paintingNameText;
+    [SerializeField] private TextMeshProUGUI painterNameText;
     [SerializeField] private TextMeshProUGUI uiText;
     public GameObject moreInformationGameObject;
+    public GameObject moreInformationText;
+    public GameObject moreInformationOpen;
 
     public TMP_InputField feedbackText;
     public GameObject indicator;
@@ -22,12 +26,18 @@ public class TrackedImageUIUpdater : MonoBehaviour
 
     [SerializeField] private LocalizedString defaultScanMessage;
 
+
     private Dictionary<string, LocalizedString> textDictionary = new Dictionary<string, LocalizedString>();
+
+    private Dictionary<string, LocalizedString> paintingNameDictionary = new Dictionary<string, LocalizedString>();
+    private Dictionary<string, LocalizedString> painterNameDictionary = new Dictionary<string, LocalizedString>();
 
     [System.Serializable]
     public class ImageTextMapping
     {
         public string imageName;
+        public LocalizedString paintingName;
+        public LocalizedString painterName;
         public LocalizedString localizedText;
     }
 
@@ -51,6 +61,15 @@ public class TrackedImageUIUpdater : MonoBehaviour
                 textDictionary[mapping.imageName] = mapping.localizedText;
             }
         }
+
+        foreach (var mapping in imageTextMappings)
+        {
+            if (!paintingNameDictionary.ContainsKey(mapping.imageName))
+                paintingNameDictionary[mapping.imageName] = mapping.paintingName;
+
+            if (!painterNameDictionary.ContainsKey(mapping.imageName))
+                painterNameDictionary[mapping.imageName] = mapping.painterName;
+        }
     }
 
     private void OnEnable()
@@ -68,10 +87,18 @@ public class TrackedImageUIUpdater : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             UpdateUIText(trackedImage);
+            moreInformationGameObject.SetActive(true);
+            moreInformationText.SetActive(false);
+            moreInformationOpen.SetActive(false);
             if (!moreInformationGameObject.activeSelf)
             {
                 indicator.SetActive(true);
             }
+            else
+            {
+                RemoveIndicator();
+            }
+
         }
 
         foreach (var trackedImage in eventArgs.updated)
@@ -94,6 +121,22 @@ public class TrackedImageUIUpdater : MonoBehaviour
             localizedText.StringChanged += (value) =>
             {
                 uiText.text = value;
+            };
+        }
+
+        if (paintingNameDictionary.TryGetValue(imageName, out LocalizedString paintingName))
+        {
+            paintingName.StringChanged += (value) =>
+            {
+                paintingNameText.text = value;
+            };
+        }
+
+        if (painterNameDictionary.TryGetValue(imageName, out LocalizedString painterName))
+        {
+            painterName.StringChanged += (value) =>
+            {
+                painterNameText.text = value;
             };
         }
     }

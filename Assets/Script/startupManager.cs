@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class startupManager : MonoBehaviour
 {
@@ -8,25 +9,20 @@ public class startupManager : MonoBehaviour
     public Button button;
     public Button tosButton;
     public ScrollRect scrollRect;
-
-    public bool debug = false;
+    public GameObject warning;
 
     void Start()
     {
-        if (debug == false)
+        if (PlayerPrefs.HasKey("HasReadTC"))
         {
-            if (PlayerPrefs.HasKey("HasLaunchedBefore"))
-            {
-                SceneManager.LoadScene("Authentication");
-            }
-
-            else
-            {
-                PlayerPrefs.SetInt("HasLaunchedBefore", 1);
-                PlayerPrefs.Save();
-            }
+            toggle.interactable = true;
+            toggle.isOn = true;
+            warning.SetActive(false);
         }
-        toggle.interactable = false;
+        else
+        {
+            toggle.interactable = false;
+        }
     }
 
     void Update()
@@ -34,6 +30,7 @@ public class startupManager : MonoBehaviour
         if (scrollRect.verticalNormalizedPosition <= 0.001f)
         {
             tosButton.interactable = true;
+            warning.SetActive(false);
         }
         else
         {

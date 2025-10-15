@@ -10,6 +10,7 @@ public class LocaleSelector : MonoBehaviour
     {
         int ID = PlayerPrefs.GetInt("LocaleKey", 0);
         ChangeLocale(ID);
+        Debug.Log(PlayerPrefs.GetInt("LocaleKey", 0));
     }
 
     public void ChangeLocale(int localeID)

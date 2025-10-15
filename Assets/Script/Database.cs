@@ -8,7 +8,7 @@ using Firebase;
 
 public class Database : MonoBehaviour
 {
-    public TextMeshProUGUI Gender;
+    public TMP_InputField Age;
     public TMP_InputField Nationality;
     public GameObject loadingScreen;
     public GameObject parent;
@@ -28,16 +28,16 @@ public class Database : MonoBehaviour
     }
 
     public void NextButton() {
-        if (Nationality.text.Length != 0) {
+        if (Nationality.text.Length != 0 && Age.text.Length != 0) {
             loadingScreen.SetActive(true);
 
             FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
             if (user != null) {
-                Data Data= new Data();
-                Data.Gender = Gender.text;
+                Data Data = new Data();
+                Data.Age = int.Parse(Age.text);
                 Data.Nationality = Nationality.text;
 
-                WriteNewUser(user.UserId, Data.Gender, Data.Nationality);
+                WriteNewUser(user.UserId, Data.Nationality, Data.Age);
                 SceneManager.LoadScene("Camera");
             }
             else {
@@ -48,18 +48,18 @@ public class Database : MonoBehaviour
         loadingScreen.SetActive(false);
     }
 
-    private void WriteNewUser(string userId, string nationality, string gender) {
+    private void WriteNewUser(string userId, string nationality, int age) {
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 
         string nat = Nationality.text;
-        string gen = Gender.text;
-        Data Data= new Data(nat, gen);
+        int ag = int.Parse(Age.text);
+        Data Data = new Data(nat, ag);
         string json = JsonUtility.ToJson(Data);
 
         reference.Child("users").Child(userId).Child("data").SetRawJsonValueAsync(json);
     }
 
-        void CheckProfile() {
+    void CheckProfile() {
         FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
         string uid = user.UserId;
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("users").Child(user.UserId).Child("data");
@@ -72,7 +72,7 @@ public class Database : MonoBehaviour
             }
 
             DataSnapshot snapshot = task.Result;
-            if (snapshot.HasChild("Gender"))
+            if (snapshot.HasChild("Age"))
             {
                 SceneManager.LoadScene("Camera");
             }
@@ -89,13 +89,13 @@ public class Database : MonoBehaviour
 public class Data 
 {
     public string Nationality;
-    public string Gender;
+    public int Age;
 
-        public Data() {
-        }
+    public Data() {
+    }
 
-        public Data(string Nationality, string Gender) {
-            this.Nationality = Nationality;
-            this.Gender = Gender;
-        }
+    public Data(string Nationality, int Age) {
+        this.Nationality = Nationality;
+        this.Age = Age;
+    }
 }

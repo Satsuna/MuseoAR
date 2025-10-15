@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39bb24e2bd7a482ca08117fb44b8e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Image: {fileID: 2800000, guid: d24b9008dd6bfe44385139920debe059, type: 3}
+  m_Image: {fileID: 2800000, guid: 046c307a6e379494abffa3555e8765a9, type: 3}
   m_ImagePhysicalSizeMeters: {x: 1, y: 1}
   m_QuadMesh: {fileID: 0}
   m_QuadMaterial: {fileID: 0}
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39bb24e2bd7a482ca08117fb44b8e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Image: {fileID: 2800000, guid: 3864ca296b5956d48a3bcf3e0767900d, type: 3}
+  m_Image: {fileID: 2800000, guid: e21885520fd483243b383450f38053f6, type: 3}
   m_ImagePhysicalSizeMeters: {x: 1, y: 1}
   m_QuadMesh: {fileID: 0}
   m_QuadMaterial: {fileID: 0}
