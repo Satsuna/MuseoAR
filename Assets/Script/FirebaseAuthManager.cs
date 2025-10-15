@@ -4,6 +4,7 @@ using TMPro;
 using Firebase.Extensions;
 using Firebase.Auth;
 using Firebase;
+using Firebase.Database;
 using UnityEngine.SceneManagement;
 
 public class FirebaseAuthManager : MonoBehaviour
@@ -65,16 +66,53 @@ public class FirebaseAuthManager : MonoBehaviour
             SignupPassword.text = "";
             SignupPasswordConfirm.text = "";
 
-            if (result.User.IsEmailVerified)
+            FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+            if (user != null)
             {
-                showLogMsg("Sign up Successful");
+                user.SendEmailVerificationAsync().ContinueWithOnMainThread(task =>
+                {
+                    if (task.IsFaulted)
+                    {
+                        FirebaseException firebaseEx = task.Exception.GetBaseException() as FirebaseException;
+                        AuthError error = (AuthError)firebaseEx.ErrorCode;
+                        showLogMsg("Email send failed: " + error.ToString());
+                    }
+                    else
+                    {
+                        showLogMsg("Verification email sent! Please check your inbox.");
+                    }
+                });
             }
             else
             {
-                showLogMsg("Please verify your email!!");
-                SendEmailVerification();
+                showLogMsg("Error: No user found to send verification.");
             }
 
+
+            // Check if user has data in database; if not, go to "User Data"
+            FirebaseDatabase.DefaultInstance
+                .GetReference("users")
+                .Child(result.User.UserId)
+                .Child("data")
+                .GetValueAsync()
+                .ContinueWithOnMainThread(dbTask =>
+                {
+                    if (dbTask.IsFaulted)
+                    {
+                        Debug.LogError("Database check failed: " + dbTask.Exception);
+                        return;
+                    }
+
+                    DataSnapshot snapshot = dbTask.Result;
+                    if (snapshot == null || !snapshot.Exists)
+                    {
+                        SceneManager.LoadScene("User Data");
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene("Camera");
+                    }
+                });
         });
     }
 
@@ -100,12 +138,9 @@ public class FirebaseAuthManager : MonoBehaviour
             }
         }
     }
-
-
     #endregion
 
     #region Login
-    
     public void Login() {
         loadingScreen.SetActive(true);
 
@@ -113,8 +148,8 @@ public class FirebaseAuthManager : MonoBehaviour
         string email = LoginEmail.text;
         string password = loginPassword.text;
 
-         Credential credential = EmailAuthProvider.GetCredential(email, password);
-         auth.SignInAndRetrieveDataWithCredentialAsync(credential).ContinueWithOnMainThread(task => {
+        Credential credential = EmailAuthProvider.GetCredential(email, password);
+        auth.SignInAndRetrieveDataWithCredentialAsync(credential).ContinueWithOnMainThread(task => {
             if (task.IsCanceled)
             {
                 return;
@@ -134,13 +169,38 @@ public class FirebaseAuthManager : MonoBehaviour
 
             PlayerPrefs.SetInt("LoggedIn", 1);
             PlayerPrefs.Save();
-            SceneManager.LoadScene("User Data");
 
-             if (!result.User.IsEmailVerified)
-             {
+            // ✅ Check user data before deciding which scene
+            FirebaseDatabase.DefaultInstance
+                .GetReference("users")
+                .Child(result.User.UserId)
+                .Child("data")
+                .GetValueAsync()
+                .ContinueWithOnMainThread(dbTask =>
+                {
+                    if (dbTask.IsFaulted)
+                    {
+                        Debug.LogError("Database check failed: " + dbTask.Exception);
+                        SceneManager.LoadScene("User Data");
+                        return;
+                    }
+
+                    DataSnapshot snapshot = dbTask.Result;
+                    if (snapshot == null || !snapshot.Exists)
+                    {
+                        SceneManager.LoadScene("User Data");
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene("Camera");
+                    }
+                });
+
+            if (!result.User.IsEmailVerified)
+            {
                 showLogMsg("Please verify email!!");
-             }
-         });       
+            }
+        });       
     }
     #endregion
 

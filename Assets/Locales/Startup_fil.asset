@@ -463,6 +463,169 @@ MonoBehaviour:
     m_Localized: 14
     m_Metadata:
       m_Items: []
+  - m_Id: 4281112982024192
+    m_Localized: "\rMangyaring basahin ang mga tuntunin at kundisyon"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4939698603126784
+    m_Localized: Ang seryeng ito ay binubuo ng 14 na oil painting sa canvas, na itinuturing
+      na mga pinakaunang likhang sining na naglalarawan ng isang makasaysayang pangyayari
+      sa Pilipinas, ang Pag-aalsa ng Basi noong Setyembre 1807 sa Ilocos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940150098980864
+    m_Localized: Anong uri ng mga painting ang nasa serye?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940202326454272
+    m_Localized: Mga oil painting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940223914536960
+    m_Localized: Watercolor paintings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940512100970496
+    m_Localized: Ilan ang mga painting sa serye?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940595508899840
+    m_Localized: 'Labing-apat '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4940954369355776
+    m_Localized: Sampu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4941071902142464
+    m_Localized: Anong makasaysayang pangyayari ang inilalarawan ng mga painting?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4941167448387584
+    m_Localized: Rebolusyong Pilipino
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4941258368315392
+    m_Localized: Pag-aalsa ng Basi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5025120603697152
+    m_Localized: Ipasok ang iyong edad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5025363533590528
+    m_Localized: Ipasok ang iyong edad...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5648559907631104
+    m_Localized: Spoliarium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5648533571596288
+    m_Localized: Juan Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5649384532963328
+    m_Localized: Bataan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5649398860705792
+    m_Localized: Fernando Amorsolo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5652031218479104
+    m_Localized: The Assassination of Governor Bustamante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5652083294957568
+    m_Localized: "F\xE9lix Resurrecci\xF3n Hidalgo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5654636246167552
+    m_Localized: Una Bulaquena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5654652855611392
+    m_Localized: Juan Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5655927320047616
+    m_Localized: Basi Revolt II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5656219885334528
+    m_Localized: Basi Revolt VI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5656398009036800
+    m_Localized: Esteban Pichay Villanueva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5663298385702912
+    m_Localized: "\"Noong 1884, lumipat si Juan Luna sa Paris, na nagmarka ng bagong
+      yugto sa kanyang sining kung saan naging mas magaan at mas masigla ang kanyang
+      estilo. Sa panahong ito, ipininta niya ang ilang tanyag na obra gaya ng Ensue\xF1os
+      de Amor (1886) at naging aktibo sa Philippine Propaganda Movement kasama sina
+      Dr. Jos\xE9 Rizal at Dr. Ariston Bautista Lin.\n\nAng kanyang obra noong 1892
+      na Parisian Life ay nagpapakita ng isang payapang sandali kasama ang kanyang
+      dalawang kaibigan sa isang caf\xE9 sa Paris, na sumasagisag sa katahimikan
+      bago sila bumalik sa Pilipinas upang makibahagi sa rebolusyonaryong kilusan.
+      Ang likhang-sining na ito ay isa sa mga huling pangunahing obra ni Luna mula
+      sa kanyang mga taon sa Paris at nagpapakita ng kanyang kasanayan sa sining
+      at malalim na ugnayan sa kanyang mga kababayang makabayan.\""
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5663331864637440
+    m_Localized: Ang Buhay sa Paris
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665181938577408
+    m_Localized: Ang pagpipinta ni Juan Luna na Parisian Life ay ginawa niya habang
+      naninirahan sa aling lungsod?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665277426102272
+    m_Localized: Paris
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665356123828224
+    m_Localized: Madrid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665430677581824
+    m_Localized: Ano ang pangkalahatang damdamin o tema na ipinapakita sa Parisian
+      Life?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665566396870656
+    m_Localized: Magaan at masaya
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665583090200576
+    m_Localized: Madilim at malungkot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665746672250880
+    m_Localized: Ang Parisian Life ba ay isa sa mga huling pangunahing obra ni Juan
+      Luna sa kanyang Panahong Parisian?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665818713616384
+    m_Localized: Oo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5665832840032256
+    m_Localized: Hindi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6736308089745408
+    m_Localized: nakalimutan ang password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6737208317407232
+    m_Localized: Reset Password
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
