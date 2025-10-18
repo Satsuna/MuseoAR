@@ -55,7 +55,7 @@ public class FirebaseAuthManager : MonoBehaviour
                 FirebaseException firebaseEx = task.Exception.GetBaseException() as FirebaseException;
                 AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
 
-                showLogMsg("Sign up failed: " + errorCode.ToString());
+                showLogMsg("Sign up failed: " + FormatFirebaseError(errorCode));
                 return;
             }
 
@@ -89,7 +89,6 @@ public class FirebaseAuthManager : MonoBehaviour
             }
 
 
-            // Check if user has data in database; if not, go to "User Data"
             FirebaseDatabase.DefaultInstance
                 .GetReference("users")
                 .Child(result.User.UserId)
@@ -160,7 +159,7 @@ public class FirebaseAuthManager : MonoBehaviour
                 FirebaseException firebaseEx = task.Exception.GetBaseException() as FirebaseException;
                 AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
 
-                showLogMsg("Login failed: " + errorCode.ToString());
+                showLogMsg("Login failed: " + FormatFirebaseError(errorCode));
                 return;
             }
 
@@ -170,7 +169,6 @@ public class FirebaseAuthManager : MonoBehaviour
             PlayerPrefs.SetInt("LoggedIn", 1);
             PlayerPrefs.Save();
 
-            // ✅ Check user data before deciding which scene
             FirebaseDatabase.DefaultInstance
                 .GetReference("users")
                 .Child(result.User.UserId)
@@ -223,6 +221,20 @@ public class FirebaseAuthManager : MonoBehaviour
     {
         logTxt.text = msg;
         logTxt.GetComponent<Animation>().Play("textFadeout");
+    }
+
+    string FormatFirebaseError(AuthError errorCode)
+    {
+        string errorText = errorCode.ToString();
+        for (int i = 1; i < errorText.Length; i++)
+        {
+            if (char.IsUpper(errorText[i]) && errorText[i - 1] != ' ')
+            {
+                errorText = errorText.Insert(i, " ");
+                i++;
+            }
+        }
+        return errorText.Trim();
     }
     #endregion
 

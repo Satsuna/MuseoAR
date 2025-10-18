@@ -616,6 +616,18 @@ MonoBehaviour:
     m_Localized: Reset Password
     m_Metadata:
       m_Items: []
+  - m_Id: 7614510962143232
+    m_Localized: Clear App Data
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7616923139928064
+    m_Localized: Clear App Data?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7840939494699008
+    m_Localized: Click Anywhere to Close
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

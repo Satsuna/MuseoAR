@@ -73,7 +73,6 @@ public class FirebaseDatabaseScript : MonoBehaviour
         });
     }
 
-    // Extra functions for uploading images
     private List<string> GetImageNames()
     {
         List<string> imageNames = new List<string>();

@@ -11,6 +11,10 @@ public class startupManager : MonoBehaviour
     public ScrollRect scrollRect;
     public GameObject warning;
 
+    private void Awake() {
+        Application.targetFrameRate = 60;    
+    }
+
     void Start()
     {
         if (PlayerPrefs.HasKey("HasReadTC"))
