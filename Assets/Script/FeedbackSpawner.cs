@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FeedbackSpawner : MonoBehaviour
 {
-    public GameObject feedbackPrefab; // Assign your FeedbackPanel prefab
+    public GameObject feedbackPrefab;
     private GameObject currentFeedback;
 
     public GameObject SpawnFeedback(bool isCorrect)

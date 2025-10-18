@@ -547,6 +547,18 @@ MonoBehaviour:
     m_Key: reset password
     m_Metadata:
       m_Items: []
+  - m_Id: 7614510962143232
+    m_Key: Clear all data
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7616923139928064
+    m_Key: Clear all data question
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7840939494699008
+    m_Key: anywhere to close
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

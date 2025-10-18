@@ -36,7 +36,6 @@ public class dropdownlocale : MonoBehaviour
             {
                 dropdown.options.Add(new TMP_Dropdown.OptionData(op.Result));
 
-                // Refresh label after adding
                 if (dropdown.options.Count == optionKeys.Length)
                 {
                     dropdown.captionText.text = dropdown.options[dropdown.value].text;

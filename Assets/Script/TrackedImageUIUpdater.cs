@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 using Firebase.Database;
 using UnityEngine.UI;
 using UnityEngine.Localization;
-using UnityEngine.Localization.Settings;
 
 public class TrackedImageUIUpdater : MonoBehaviour
 {
@@ -19,6 +18,7 @@ public class TrackedImageUIUpdater : MonoBehaviour
     public GameObject moreInformationGameObject;
     public GameObject moreInformationText;
     public GameObject moreInformationOpen;
+    public GameObject help;
 
     public TMP_InputField feedbackText;
     public GameObject indicator;
@@ -44,6 +44,16 @@ public class TrackedImageUIUpdater : MonoBehaviour
     private void Start()
     {
         m_button.onClick.AddListener(RemoveIndicator);
+
+        if (PlayerPrefs.HasKey("FirstTimeTutorial"))
+        {
+            help.SetActive(false);
+        }
+        else
+        {
+            help.SetActive(true);
+            PlayerPrefs.SetInt("FirstTimeTutorial", 1);
+        }
     }
 
     public void RemoveIndicator()
@@ -53,7 +63,6 @@ public class TrackedImageUIUpdater : MonoBehaviour
 
     private void Awake()
     {
-        // Populate dictionary for quick lookup
         foreach (var mapping in imageTextMappings)
         {
             if (!textDictionary.ContainsKey(mapping.imageName))
@@ -172,13 +181,19 @@ public class TrackedImageUIUpdater : MonoBehaviour
         FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
         SubmitFeedback(user.UserId, feedbackText.text);
     }
+
+    public void ClearAllData()
+    {
+        PlayerPrefs.DeleteAll();
+        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+        auth.SignOut();
+    }
 }
 
 [System.Serializable]
 public class Feedback
 {
     public string feedback;
-
     public Feedback() { }
 
     public Feedback(string content)

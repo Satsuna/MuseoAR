@@ -24,14 +24,13 @@ public class TrackedImageSpawner : MonoBehaviour
     public class PrefabMapping
     {
         public string imageName; // Reference Image Library
-        public GameObject prefab; // Prefab to spawn
+        public GameObject prefab;
     }
 
     private void Awake()
     {
         arSession.Reset();
 
-        // Convert list to dictionary for quick lookup
         foreach (var mapping in prefabMappings)
         {
             if (!prefabDictionary.ContainsKey(mapping.imageName))
@@ -40,7 +39,6 @@ public class TrackedImageSpawner : MonoBehaviour
             }
         }
 
-        // Initialize Firebase Database reference
         dbReference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
@@ -88,8 +86,8 @@ public class TrackedImageSpawner : MonoBehaviour
                 GameObject spawnedObject = Instantiate(prefab, trackedImage.transform.position, trackedImage.transform.rotation);
                 spawnedObjects[imageName] = spawnedObject;
 
-                Vector2 size = trackedImage.size; // in meters (width, height of the painting)
-                float uniformScale = Mathf.Min(size.x, size.y); // pick smaller dimension to preserve aspect ratio
+                Vector2 size = trackedImage.size; // in meters 
+                float uniformScale = Mathf.Min(size.x, size.y);
                 spawnedObject.transform.localScale = Vector3.one * uniformScale;
 
                 Debug.Log("Spawned a 3d Object! " + spawnedObject);

@@ -11,7 +11,7 @@ public class Quiz : MonoBehaviour
     [System.Serializable]
     public class Question
     {
-        public string questionForPainting; // Painting this question is for
+        public string questionForPainting;
         public LocalizedString questionText;
         public LocalizedString choiceA;
         public LocalizedString choiceB;
