@@ -79,6 +79,8 @@ public class TrackedImageUIUpdater : MonoBehaviour
             if (!painterNameDictionary.ContainsKey(mapping.imageName))
                 painterNameDictionary[mapping.imageName] = mapping.painterName;
         }
+
+        Application.targetFrameRate = 60;
     }
 
     private void OnEnable()

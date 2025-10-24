@@ -99,7 +99,7 @@ public class Quiz : MonoBehaviour
 
         activePaintingName = paintingName;
         FilterQuestionsForPainting();
-        ShowRandomQuestion();
+        //ShowRandomQuestion();
     }
 
     private void FilterQuestionsForPainting()
