@@ -12,8 +12,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: L01_cafe
-    second: {fileID: 2100000, guid: be26a6d8c9786174fb0ef15ec57012be, type: 2}
+      name: Material.002
+    second: {fileID: 2100000, guid: c294104a63ee62540933e47f4c024708, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -44,7 +44,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1

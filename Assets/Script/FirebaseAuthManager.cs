@@ -26,94 +26,99 @@ public class FirebaseAuthManager : MonoBehaviour
     #endregion
 
     #region signup 
-    public void SignUp()
+public void SignUp()
+{
+    logTxt.text = "";
+    loadingScreen.SetActive(true);
+
+    FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+    string email = SignupEmail.text;
+    string password = SignupPassword.text;
+    string confirmPassword = SignupPasswordConfirm.text;
+
+    if (password != confirmPassword)
     {
-        logTxt.text = "";
-        loadingScreen.SetActive(true);
+        loadingScreen.SetActive(false);
+        showLogMsg("Password does not match!");
+        return;
+    }
 
-        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
-        string email = SignupEmail.text;
-        string password = SignupPassword.text;
-        string confirmPassword = SignupPasswordConfirm.text;
+    auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+    {
+        if (task.IsCanceled) return;
 
-        if (password != confirmPassword)
+        if (task.IsFaulted)
         {
             loadingScreen.SetActive(false);
-            showLogMsg("Password does not match!");
+            FirebaseException firebaseEx = task.Exception.GetBaseException() as FirebaseException;
+            AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
+            showLogMsg("Sign up failed: " + FormatFirebaseError(errorCode));
             return;
         }
 
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+        loadingScreen.SetActive(false);
+        AuthResult result = task.Result;
+
+        SignupEmail.text = "";
+        SignupPassword.text = "";
+        SignupPasswordConfirm.text = "";
+
+        FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+        if (user != null)
         {
-            if (task.IsCanceled)
+            user.SendEmailVerificationAsync().ContinueWithOnMainThread(task =>
             {
-                return;
-            }
-            if (task.IsFaulted)
-            {
-                loadingScreen.SetActive(false);
-                FirebaseException firebaseEx = task.Exception.GetBaseException() as FirebaseException;
-                AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
+                if (task.IsFaulted)
+                {
+                    FirebaseException firebaseEx = task.Exception.GetBaseException() as FirebaseException;
+                    AuthError error = (AuthError)firebaseEx.ErrorCode;
+                    showLogMsg("Email send failed: " + error.ToString());
+                }
+                else
+                {
+                    showLogMsg("Verification email sent! Please check your inbox.");
+                }
+            });
+        }
+        else
+        {
+            showLogMsg("Error: No user found to send verification.");
+            return;
+        }
 
-                showLogMsg("Sign up failed: " + FormatFirebaseError(errorCode));
-                return;
-            }
-
+        if (!user.IsEmailVerified)
+        {
             loadingScreen.SetActive(false);
-            AuthResult result = task.Result;
+            showLogMsg("Please verify your email first before continuing.");
+            return;
+        }
 
-            SignupEmail.text = "";
-            SignupPassword.text = "";
-            SignupPasswordConfirm.text = "";
-
-            FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
-            if (user != null)
+        FirebaseDatabase.DefaultInstance
+            .GetReference("users")
+            .Child(result.User.UserId)
+            .Child("data")
+            .GetValueAsync()
+            .ContinueWithOnMainThread(dbTask =>
             {
-                user.SendEmailVerificationAsync().ContinueWithOnMainThread(task =>
+                if (dbTask.IsFaulted)
                 {
-                    if (task.IsFaulted)
-                    {
-                        FirebaseException firebaseEx = task.Exception.GetBaseException() as FirebaseException;
-                        AuthError error = (AuthError)firebaseEx.ErrorCode;
-                        showLogMsg("Email send failed: " + error.ToString());
-                    }
-                    else
-                    {
-                        showLogMsg("Verification email sent! Please check your inbox.");
-                    }
-                });
-            }
-            else
-            {
-                showLogMsg("Error: No user found to send verification.");
-            }
+                    Debug.LogError("Database check failed: " + dbTask.Exception);
+                    return;
+                }
 
-
-            FirebaseDatabase.DefaultInstance
-                .GetReference("users")
-                .Child(result.User.UserId)
-                .Child("data")
-                .GetValueAsync()
-                .ContinueWithOnMainThread(dbTask =>
+                DataSnapshot snapshot = dbTask.Result;
+                if (snapshot == null || !snapshot.Exists)
                 {
-                    if (dbTask.IsFaulted)
-                    {
-                        Debug.LogError("Database check failed: " + dbTask.Exception);
-                        return;
-                    }
+                    SceneManager.LoadScene("User Data");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Camera");
+                }
+            });
+    });
+}
 
-                    DataSnapshot snapshot = dbTask.Result;
-                    if (snapshot == null || !snapshot.Exists)
-                    {
-                        SceneManager.LoadScene("User Data");
-                    }
-                    else
-                    {
-                        SceneManager.LoadScene("Camera");
-                    }
-                });
-        });
-    }
 
     public void SendEmailVerification() {
         StartCoroutine(SendEmailForVerificationAsync());

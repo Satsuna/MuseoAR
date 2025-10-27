@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d451e98c14382249a74713d31346004
+guid: 69eff0162469485479ce3ec13b68ffc6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mestiza
-    second: {fileID: 2100000, guid: 818f854f309327e498abc0bb82b4fe94, type: 2}
+      name: Material.002
+    second: {fileID: 2100000, guid: ab295546632806546a9256faa5986be9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mestiza_L01
-    second: {fileID: 2100000, guid: cb64d6b0e2eddee45bec0322f18d8fb9, type: 2}
+      name: Mestiza
+    second: {fileID: 2100000, guid: db13e1f56cd92534a95fa28a020bc5e1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mestiza_L02
-    second: {fileID: 2100000, guid: 468a672f9b00b8e49813beeb9d5d61e6, type: 2}
+    second: {fileID: 2100000, guid: b0159dc8fc1bc244ebb1f573a5dac1a1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

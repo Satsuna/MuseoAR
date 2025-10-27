@@ -7,28 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 59abbcc336d00d34d9fc89cd9ff2a45d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: The_Dark_Nazarene_of_Quiapo
-    second: {fileID: 2100000, guid: 304612b0f2a2696458ff7d9ffc1d8321, type: 2}
+    second: {fileID: 2100000, guid: 1096bed3fce77c6478fee2bac0795844, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: nazarene1
-    second: {fileID: 2100000, guid: 6d40c3842c64e14438e674e090c3667a, type: 2}
+    second: {fileID: 2100000, guid: 5fd3e364bda45d24f91f9c8fcb8ec29d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: nazarene2
-    second: {fileID: 2100000, guid: 03a0af2bb0298bc4481bc54b21b745a0, type: 2}
+    second: {fileID: 2100000, guid: 2b6e2a0bf633d8345aa8c6dada2a7788, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: nazarene3
-    second: {fileID: 2100000, guid: 6b63e9921b80cc946912b086ef7fb195, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: nazarene4
-    second: {fileID: 2100000, guid: c8255b7b18187c04b9b7dd41c3622afa, type: 2}
+    second: {fileID: 2100000, guid: 5b70f4566bdfb294985a0435573a7f18, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
