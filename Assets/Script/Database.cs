@@ -18,8 +18,6 @@ public class Database : MonoBehaviour
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task => {
             var dependencyStatus = task.Result;
             if (dependencyStatus == DependencyStatus.Available) {
-                FirebaseApp.DefaultInstance.Options.DatabaseUrl = new System.Uri("https://museoar-ace55-default-rtdb.asia-southeast1.firebasedatabase.app/");
-                Debug.Log("Firebase ready!");
                 CheckProfile();
             } else {
                 Debug.LogError($"Could not resolve all Firebase dependencies: {dependencyStatus}");
