@@ -775,6 +775,14 @@ MonoBehaviour:
       showcasing Filipino resilience, unity, and unwavering faith in the Black Nazarene.\""
     m_Metadata:
       m_Items: []
+  - m_Id: 10481081913012224
+    m_Localized: 'Painting:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10481093195689984
+    m_Localized: 'Painter:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
