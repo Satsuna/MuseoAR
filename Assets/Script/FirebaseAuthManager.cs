@@ -145,66 +145,73 @@ public void SignUp()
     #endregion
 
     #region Login
-    public void Login() {
-        loadingScreen.SetActive(true);
+    public void Login()
+{
+    loadingScreen.SetActive(true);
 
-        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
-        string email = LoginEmail.text;
-        string password = loginPassword.text;
+    FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+    string email = LoginEmail.text;
+    string password = loginPassword.text;
 
-        Credential credential = EmailAuthProvider.GetCredential(email, password);
-        auth.SignInAndRetrieveDataWithCredentialAsync(credential).ContinueWithOnMainThread(task => {
-            if (task.IsCanceled)
+    auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+    {
+        if (task.IsCanceled || task.IsFaulted)
+        {
+            loadingScreen.SetActive(false);
+
+            if (task.Exception != null)
             {
-                return;
-            }
-            if (task.IsFaulted)
-            {
-                loadingScreen.SetActive(false);
                 FirebaseException firebaseEx = task.Exception.GetBaseException() as FirebaseException;
                 AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
-
                 showLogMsg("Login failed: " + FormatFirebaseError(errorCode));
-                return;
             }
 
+            return;
+        }
+
+        AuthResult result = task.Result;
+
+        if (!result.User.IsEmailVerified)
+        {
             loadingScreen.SetActive(false);
-            AuthResult result = task.Result;
+            showLogMsg("Please verify your email first!");
+            FirebaseAuth.DefaultInstance.SignOut();
+            return;
+        }
 
-            PlayerPrefs.SetInt("LoggedIn", 1);
-            PlayerPrefs.Save();
+        PlayerPrefs.SetInt("LoggedIn", 1);
+        PlayerPrefs.Save();
 
-            FirebaseDatabase.DefaultInstance
-                .GetReference("users")
-                .Child(result.User.UserId)
-                .Child("data")
-                .GetValueAsync()
-                .ContinueWithOnMainThread(dbTask =>
-                {
-                    if (dbTask.IsFaulted)
-                    {
-                        Debug.LogError("Database check failed: " + dbTask.Exception);
-                        SceneManager.LoadScene("User Data");
-                        return;
-                    }
-
-                    DataSnapshot snapshot = dbTask.Result;
-                    if (snapshot == null || !snapshot.Exists)
-                    {
-                        SceneManager.LoadScene("User Data");
-                    }
-                    else
-                    {
-                        SceneManager.LoadScene("Camera");
-                    }
-                });
-
-            if (!result.User.IsEmailVerified)
+        FirebaseDatabase.DefaultInstance
+            .GetReference("users")
+            .Child(result.User.UserId)
+            .Child("data")
+            .GetValueAsync()
+            .ContinueWithOnMainThread(dbTask =>
             {
-                showLogMsg("Please verify email!!");
-            }
-        });       
-    }
+                loadingScreen.SetActive(false);
+
+                if (dbTask.IsFaulted)
+                {
+                    Debug.LogError("Database check failed: " + dbTask.Exception);
+                    SceneManager.LoadScene("User Data");
+                    return;
+                }
+
+                DataSnapshot snapshot = dbTask.Result;
+
+                if (snapshot == null || !snapshot.Exists)
+                {
+                    SceneManager.LoadScene("User Data");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Camera");
+                }
+            });
+    });
+}
+
     #endregion
 
     #region Start
