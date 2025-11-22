@@ -38,7 +38,7 @@ The application includes interactive content for famous Philippine artworks:
 - **Parisian Life** - Juan Luna's masterpiece
 - **Spoliarium** - Juan Luna's most famous work
 - **The Assassination of Governor Bustamante** - Historical painting
-- **Una Bilaquena** - Traditional Filipino artwork
+- **Una Bulaquena** - Traditional Filipino artwork
 
 ---
 
@@ -88,7 +88,7 @@ The application includes interactive content for famous Philippine artworks:
 
 1. **Clone the Repository**
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/Satsuna/MuseoAR.git
    cd MuseoAR
    ```
 
@@ -173,9 +173,9 @@ This project serves as the capstone thesis for BSCS 411, demonstrating the pract
 ## 📞 Contact Information
 
 **Thesis Group 2 - BSCS 411**
-- **Email**: [group-email@university.edu]
-- **Repository**: [GitHub Repository URL]
-- **Documentation**: [Thesis Documentation Link]
+- **Email**: museoar2024@gmail.com
+- **Repository**: https://github.com/Satsuna/MuseoAR
+<!-- - **Documentation**: [where link]-->
 
 ---
 
