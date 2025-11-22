@@ -71,6 +71,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-google-services.json
-google-services-desktop.json
+/Assets/StreamingAssets/*
+/Assets/Streaming Assets/*
 C:/Users/James/Desktop/Files/Unity projects/No templates/Assets/Plugins/Android/FirebaseApp.androidlib/res/values/*
