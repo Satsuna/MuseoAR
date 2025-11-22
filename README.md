@@ -20,12 +20,12 @@
 
 ### 🎯 Key Features
 
-- **🔍 AR Image Recognition**: Scan museum artworks to trigger 3D models and interactive content
-- **📚 Educational Quizzes**: Interactive quizzes about each artwork with localized content
-- **🌍 Multi-language Support**: English and Filipino language options
-- **👤 User Authentication**: Secure Firebase-based user registration and login
-- **📊 Analytics Tracking**: Real-time scan tracking and user engagement metrics
-- **🎨 3D Model Integration**: Interactive 3D representations of historical artworks
+- **AR Image Recognition**: Scan museum artworks to trigger 3D models and interactive content
+- **Educational Quizzes**: Interactive quizzes about each artwork with localized content
+- **Multi-language Support**: English and Filipino language options
+- **User Authentication**: Secure Firebase-based user registration and login
+- **Analytics Tracking**: Real-time scan tracking and user engagement metrics
+- **3D Model Integration**: Interactive 3D representations of historical artworks
 
 ### 🏛️ Featured Artworks
 
